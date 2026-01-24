@@ -27,4 +27,3 @@ These characters will need attack and hit animations, victory and defeat animati
     - Icons
     - Cutscenes?
     - Title and Credits
-    - 
