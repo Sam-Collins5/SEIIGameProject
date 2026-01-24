@@ -1,8 +1,4 @@
 # All of our visual and audio files for this game.
-
-
-# List Of Assets:
-
 ### Players
     - Wizard (Computer Scientist)
     - Rouge (Cyber)
