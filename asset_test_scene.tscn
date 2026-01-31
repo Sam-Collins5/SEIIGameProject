@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://vrtcm7kbtbog"]
+
+[ext_resource type="Texture2D" uid="uid://bmyv7djgjn4pd" path="res://Assets/Sprites/Players/Paladin/paladin_spritesheet.png" id="1_upo1o"]
+[ext_resource type="Texture2D" uid="uid://bltultikh4yuu" path="res://Assets/Sprites/Players/Rouge/rouge_spritesheet.png" id="2_u70r5"]
+[ext_resource type="Texture2D" uid="uid://c5t2dpafsgpcp" path="res://Assets/Sprites/Players/Wizard/wizard_spritesheet.png" id="3_l6id1"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="PaladinSpritesheet" type="Sprite2D" parent="."]
+position = Vector2(100, 20)
+texture = ExtResource("1_upo1o")
+
+[node name="RougeSpritesheet" type="Sprite2D" parent="."]
+position = Vector2(494, 21)
+texture = ExtResource("2_u70r5")
+
+[node name="WizardSpritesheet" type="Sprite2D" parent="."]
+position = Vector2(298, 26)
+texture = ExtResource("3_l6id1")
