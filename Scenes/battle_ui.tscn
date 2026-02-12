@@ -1,0 +1,438 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1bt167m2ju2e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1nqfl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3ibte"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qyamm"]
+
+[node name="BattleUI" type="Control"]
+z_index = 999
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Question_UI" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Question" type="ColorRect" parent="Question_UI"]
+layout_mode = 0
+offset_left = -631.0
+offset_top = -350.0
+offset_right = 631.0
+offset_bottom = 67.0
+color = Color(0.34901962, 0.34901962, 0.34901962, 0.6509804)
+
+[node name="Question_Label" type="Label" parent="Question_UI/Question"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 34
+text = "Question"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="Control" parent="Question_UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button1_BG" type="ColorRect" parent="Question_UI/Buttons"]
+layout_mode = 0
+offset_left = -630.0
+offset_top = 218.0
+offset_right = -5.0
+offset_bottom = 348.0
+color = Color(0.99999994, 0.29310238, 0.2919576, 1)
+
+[node name="Button1" type="Button" parent="Question_UI/Buttons/Button1_BG"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1nqfl")
+keep_pressed_outside = true
+
+[node name="Button1Label" type="Label" parent="Question_UI/Buttons/Button1_BG/Button1"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 34
+text = "Choice 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2_BG" type="ColorRect" parent="Question_UI/Buttons"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 218.0
+offset_right = 630.0
+offset_bottom = 348.0
+color = Color(1.1070073e-06, 0.8496398, 0.22326455, 1)
+
+[node name="Button2" type="Button" parent="Question_UI/Buttons/Button2_BG"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1nqfl")
+keep_pressed_outside = true
+
+[node name="Button2Label" type="Label" parent="Question_UI/Buttons/Button2_BG/Button2"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 34
+text = "Choice 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button3_BG" type="ColorRect" parent="Question_UI/Buttons"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 77.0
+offset_right = 630.0
+offset_bottom = 207.0
+color = Color(0, 0.76001483, 0.9397159, 1)
+
+[node name="Button3" type="Button" parent="Question_UI/Buttons/Button3_BG"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1nqfl")
+keep_pressed_outside = true
+
+[node name="Button3Label" type="Label" parent="Question_UI/Buttons/Button3_BG/Button3"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 34
+text = "Choice 3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button4_BG" type="ColorRect" parent="Question_UI/Buttons"]
+layout_mode = 0
+offset_left = -630.0
+offset_top = 77.0
+offset_right = -5.0
+offset_bottom = 207.0
+color = Color(0.98506993, 0.7474702, 0, 1)
+
+[node name="Button4" type="Button" parent="Question_UI/Buttons/Button4_BG"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1nqfl")
+keep_pressed_outside = true
+
+[node name="Button4Label" type="Label" parent="Question_UI/Buttons/Button4_BG/Button4"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 34
+text = "Choice 4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WrongAnswer_BG" type="ColorRect" parent="Question_UI"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = -631.0
+offset_top = -350.0
+offset_right = 631.0
+offset_bottom = 67.0
+color = Color(1, 0.29411766, 0.2901961, 1)
+
+[node name="WrongAnswer_Label" type="Label" parent="Question_UI/WrongAnswer_BG"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 96
+text = "Wrong Answer! >:("
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CorrectAnswer_BG" type="ColorRect" parent="Question_UI"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = -631.0
+offset_top = -350.0
+offset_right = 631.0
+offset_bottom = 67.0
+color = Color(0, 0.8509804, 0.22352941, 1)
+
+[node name="CorrectAnswer_Label" type="Label" parent="Question_UI/CorrectAnswer_BG"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 96
+text = "Correct! :D"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Battle_Buttons" type="Control" parent="."]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Attack_Button_BG" type="ColorRect" parent="Battle_Buttons"]
+layout_mode = 0
+offset_left = -630.0
+offset_top = 218.0
+offset_right = -220.0
+offset_bottom = 348.0
+color = Color(1, 0.29411766, 0.2901961, 1)
+
+[node name="Attack_Button" type="Button" parent="Battle_Buttons/Attack_Button_BG"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3ibte")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qyamm")
+keep_pressed_outside = true
+
+[node name="Label" type="Label" parent="Battle_Buttons/Attack_Button_BG/Attack_Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 38
+text = "Attack"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Defend_Button_BG" type="ColorRect" parent="Battle_Buttons"]
+layout_mode = 0
+offset_left = -205.0
+offset_top = 218.0
+offset_right = 205.0
+offset_bottom = 348.0
+color = Color(0, 0.7607843, 0.9411765, 1)
+
+[node name="Defend_Button" type="Button" parent="Battle_Buttons/Defend_Button_BG"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3ibte")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qyamm")
+keep_pressed_outside = true
+
+[node name="Label" type="Label" parent="Battle_Buttons/Defend_Button_BG/Defend_Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 38
+text = "Defend"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Question_Button_BG" type="ColorRect" parent="Battle_Buttons"]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 218.0
+offset_right = 630.0
+offset_bottom = 348.0
+color = Color(0.7693674, 0.5851078, 1, 1)
+
+[node name="Question_Button" type="Button" parent="Battle_Buttons/Question_Button_BG"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3ibte")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qyamm")
+keep_pressed_outside = true
+
+[node name="Label" type="Label" parent="Battle_Buttons/Question_Button_BG/Question_Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 38
+text = "Question"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Attack_Popup" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Attack_Popup"]
+layout_mode = 0
+offset_left = -630.0
+offset_top = 218.0
+offset_right = 630.0
+offset_bottom = 348.0
+color = Color(0.16206557, 0.1620656, 0.16206557, 1)
+
+[node name="Attack_Text" type="Label" parent="Attack_Popup/ColorRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 42
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Defend_Popup" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Defend_Popup"]
+layout_mode = 0
+offset_left = -630.0
+offset_top = 218.0
+offset_right = 630.0
+offset_bottom = 348.0
+color = Color(0.16206557, 0.1620656, 0.16206557, 1)
+
+[node name="Defend_Text" type="Label" parent="Defend_Popup/ColorRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 42
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Question_Popup" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Question_Popup"]
+layout_mode = 0
+offset_left = -630.0
+offset_top = 218.0
+offset_right = 630.0
+offset_bottom = 348.0
+color = Color(0.16206557, 0.1620656, 0.16206557, 1)
+
+[node name="Question_Attack_Text" type="Label" parent="Question_Popup/ColorRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 42
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Enemy_Popup" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Enemy_Popup"]
+layout_mode = 0
+offset_left = -630.0
+offset_top = 218.0
+offset_right = 630.0
+offset_bottom = 348.0
+color = Color(0.16206557, 0.1620656, 0.16206557, 1)
+
+[node name="Enemy_Text" type="Label" parent="Enemy_Popup/ColorRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 42
+horizontal_alignment = 1
+vertical_alignment = 1
