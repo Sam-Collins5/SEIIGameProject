@@ -11,12 +11,14 @@ config_version=5
 [application]
 
 config/name="SEIIGameProject"
+run/main_scene="uid://bofp34dncoilp"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
-window/stretch/mode="canvas_items"
+window/size/viewport_width=1280
+window/size/viewport_height=720
 
 [dotnet]
 

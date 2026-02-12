@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://djq1uki0ylitr"]
+
+[ext_resource type="PackedScene" uid="uid://827re7d2w0an" path="res://Scenes/game_manager.tscn" id="1_ehpd7"]
+[ext_resource type="PackedScene" uid="uid://dx82ngo7ob8ci" path="res://Scenes/battle_manager.tscn" id="2_x7bfv"]
+[ext_resource type="PackedScene" uid="uid://d1bt167m2ju2e" path="res://Scenes/battle_ui.tscn" id="3_ehpd7"]
+[ext_resource type="PackedScene" uid="uid://c7ni0qflm182p" path="res://Scenes/battle_gfx.tscn" id="4_ehpd7"]
+
+[node name="SceneRoot" type="Node2D"]
+
+[node name="GameManager" parent="." instance=ExtResource("1_ehpd7")]
+unique_name_in_owner = true
+
+[node name="BattleManager" parent="." instance=ExtResource("2_x7bfv")]
+unique_name_in_owner = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+ignore_rotation = false
+
+[node name="BattleUI" parent="." instance=ExtResource("3_ehpd7")]
+unique_name_in_owner = true
+
+[node name="Battle_GFX" parent="." instance=ExtResource("4_ehpd7")]
+unique_name_in_owner = true
