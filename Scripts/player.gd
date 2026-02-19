@@ -21,6 +21,10 @@ func _process(delta):
 	if Input.is_action_pressed("move_down"):
 		velocity.y += 1
 	
+	if Input.is_key_pressed(KEY_B):
+		var game_manager = get_node("%GameManager")
+		game_manager.switch_to_battle()
+	
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 		$AnimatedSprite2D.play()

@@ -120,10 +120,6 @@ func _ready() -> void:
 	question_data.append("7")
 	question_data.append(3)
 	set_question(question_data)
-	
-	# TEMP
-	start_battle()
-	# TEMP
 
 
 # TODO: Take in enemy data
@@ -135,6 +131,10 @@ func start_battle() -> void:
 	correct_answer = false
 	enemy_defeated = false
 	turn = Battle_Turn.Player_Turn
+	
+	var overworld_gfx = get_node("%Overworld_GFX")
+	if overworld_gfx:
+		overworld_gfx.visible = false
 
 
 func end_battle() -> void:
@@ -142,6 +142,10 @@ func end_battle() -> void:
 	battle_gfx.visible = false
 	battle_buttons.visible = false
 	question_ui.visible = false
+	
+	var overworld_gfx = get_node("%Overworld_GFX")
+	if overworld_gfx:
+		overworld_gfx.visible = true
 
 
 func _on_button1_pressed() -> void:
