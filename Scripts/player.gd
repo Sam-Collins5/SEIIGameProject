@@ -1,4 +1,4 @@
-extends Area2D
+extends CharacterBody2D
 signal collide
 @export var speed = 400
 var screen_size
@@ -10,37 +10,55 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	var velocity = Vector2.ZERO
-	if Input.is_action_pressed("move_right"):
-		velocity.x += 1
-	if Input.is_action_pressed("move_left"):
-		velocity.x -= 1
-	if Input.is_action_pressed("move_up"):
-		velocity.y -= 1
-	if Input.is_action_pressed("move_down"):
-		velocity.y += 1
-	
-	if Input.is_key_pressed(KEY_B):
-		var game_manager = get_node("%GameManager")
-		game_manager.switch_to_battle()
+func get_input():
+	var input_direction = Vector2.ZERO
+	input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	velocity = input_direction * speed
+	#print(velocity)
 	
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 		$AnimatedSprite2D.play()
 	else:
 		$AnimatedSprite2D.stop()
-		
-	position += velocity * delta
-	position = position.clamp(Vector2.ZERO, screen_size)
 	
-	if velocity.x != 0:
-		$AnimatedSprite2D.animation = "walk"
-		$AnimatedSprite2D.flip_v = false
+	if velocity.x != 0 && velocity.y == 0:
+		$AnimatedSprite2D.animation = "walk_horiz"
 		$AnimatedSprite2D.flip_h = velocity.x < 0
-	elif velocity.y != 0:
-		$AnimatedSprite2D.animation = "up"
-		$AnimatedSprite2D.flip_v = velocity.y > 0
+	if velocity.y > 0 && velocity.x == 0:
+		$AnimatedSprite2D.animation = "walk_down"
+	if velocity.y < 0 && velocity.x == 0:
+		$AnimatedSprite2D.animation = "walk_up"
+	if velocity.y < 0 && velocity.x > 0:
+		$AnimatedSprite2D.animation = "walk_updiag"
+		$AnimatedSprite2D.flip_h = false
+	if velocity.y < 0 && velocity.x < 0:
+		$AnimatedSprite2D.animation = "walk_updiag"
+		$AnimatedSprite2D.flip_h = true
+	if velocity.y > 0 && velocity.x > 0:
+		$AnimatedSprite2D.animation = "walk_downdiag"
+		$AnimatedSprite2D.flip_h = false
+	if velocity.y > 0 && velocity.x < 0:
+		$AnimatedSprite2D.animation = "walk_downdiag"
+		$AnimatedSprite2D.flip_h = true
+		
+
+
+
+
+func _physics_process(delta):
+	get_input()
+	move_and_slide()
+	
+	
+	
+	
+func _process(delta):
+	if Input.is_key_pressed(KEY_B):
+		var game_manager = get_node("%GameManager")
+		game_manager.switch_to_battle()
+	
+	
 
 
 func _on_body_entered(body: Node2D) -> void:
