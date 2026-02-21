@@ -47,3 +47,4 @@ theme_override_font_sizes/font_size = 34
 text = "Exit Game"
 
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit Game" to="." method="_on_exit_game_pressed"]
