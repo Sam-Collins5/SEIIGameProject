@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cykhlfeqtwmjv"]
+[gd_scene load_steps=22 format=3 uid="uid://cykhlfeqtwmjv"]
 
 [ext_resource type="PackedScene" uid="uid://827re7d2w0an" path="res://Scenes/game_manager.tscn" id="1_f1ek2"]
 [ext_resource type="Script" uid="uid://bbluvwf1herh3" path="res://Scripts/player.gd" id="1_fkybt"]
@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://c7ni0qflm182p" path="res://Scenes/battle_gfx.tscn" id="3_gymyn"]
 [ext_resource type="PackedScene" uid="uid://d1bt167m2ju2e" path="res://Scenes/battle_ui.tscn" id="4_pu2lt"]
 [ext_resource type="Texture2D" uid="uid://76dokqo7hc3u" path="res://Assets/Sprites/Players/Rouge/rouge_spritesheet.png" id="6_x3wgy"]
-[ext_resource type="Texture2D" uid="uid://h5gb80h14fyh" path="res://Assets/Sprites/Scenery/tile.png" id="7_3smsa"]
-[ext_resource type="Texture2D" uid="uid://k28n23w0kc6y" path="res://Assets/Sprites/Scenery/shadow.png" id="7_8erm5"]
+[ext_resource type="Texture2D" uid="uid://m2s5l74svgva" path="res://Assets/Sprites/Scenery/tile.png" id="7_3smsa"]
+[ext_resource type="Texture2D" uid="uid://dwb5u54mi6ya6" path="res://Assets/Sprites/Scenery/shadow.png" id="7_8erm5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3smsa"]
 atlas = ExtResource("6_x3wgy")
@@ -95,79 +95,80 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_8erm5")
 
-[node name="Overworld" type="Node2D" unique_id=1048682977]
+[node name="Overworld" type="Node2D"]
 
-[node name="GameManager" parent="." unique_id=1634775636 instance=ExtResource("1_f1ek2")]
+[node name="GameManager" parent="." instance=ExtResource("1_f1ek2")]
 unique_name_in_owner = true
 
-[node name="BattleManager" parent="." unique_id=1511331730 instance=ExtResource("2_tx1dd")]
+[node name="BattleManager" parent="." instance=ExtResource("2_tx1dd")]
 unique_name_in_owner = true
 
-[node name="Battle_GFX" parent="." unique_id=646522784 instance=ExtResource("3_gymyn")]
-unique_name_in_owner = true
-visible = false
-
-[node name="BattleUI" parent="." unique_id=1401267003 instance=ExtResource("4_pu2lt")]
-unique_name_in_owner = true
-visible = false
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=595488282]
+[node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(640, 361)
 
-[node name="Overworld_GFX" type="Node2D" parent="." unique_id=1497486021]
+[node name="Battle_GFX" parent="Camera2D" instance=ExtResource("3_gymyn")]
+unique_name_in_owner = true
+visible = false
+
+[node name="BattleUI" parent="Camera2D" instance=ExtResource("4_pu2lt")]
+unique_name_in_owner = true
+visible = false
+
+[node name="Overworld_GFX" type="Node2D" parent="."]
 unique_name_in_owner = true
 
-[node name="Player" type="CharacterBody2D" parent="Overworld_GFX" unique_id=2103161160]
+[node name="Player" type="CharacterBody2D" parent="Overworld_GFX"]
 position = Vector2(641, 361)
 motion_mode = 1
 script = ExtResource("1_fkybt")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Overworld_GFX/Player" unique_id=1236716956]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Overworld_GFX/Player"]
 texture_filter = 1
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_8erm5")
 animation = &"walk_up"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Overworld_GFX/Player" unique_id=832051423]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Overworld_GFX/Player"]
 position = Vector2(-0.5, 26.25)
 shape = SubResource("RectangleShape2D_tx1dd")
 
-[node name="Shadow" type="Sprite2D" parent="Overworld_GFX/Player" unique_id=1801257750]
+[node name="Shadow" type="Sprite2D" parent="Overworld_GFX/Player"]
 modulate = Color(0.5741211, 0.5741211, 0.5741211, 0.5254902)
 show_behind_parent = true
+texture_filter = 1
 material = SubResource("CanvasItemMaterial_8erm5")
 scale = Vector2(2, 2)
 texture = ExtResource("7_8erm5")
 offset = Vector2(0, 7)
 
-[node name="Bounding Box" type="Node2D" parent="Overworld_GFX" unique_id=1789109266]
+[node name="Bounding Box" type="Node2D" parent="Overworld_GFX"]
 
-[node name="LeftWall" type="StaticBody2D" parent="Overworld_GFX/Bounding Box" unique_id=1004279452]
+[node name="LeftWall" type="StaticBody2D" parent="Overworld_GFX/Bounding Box"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Overworld_GFX/Bounding Box/LeftWall" unique_id=303120992]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Overworld_GFX/Bounding Box/LeftWall"]
 position = Vector2(-1, 355)
 shape = SubResource("RectangleShape2D_f1ek2")
 
-[node name="TopWall" type="StaticBody2D" parent="Overworld_GFX/Bounding Box" unique_id=1625499718]
+[node name="TopWall" type="StaticBody2D" parent="Overworld_GFX/Bounding Box"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Overworld_GFX/Bounding Box/TopWall" unique_id=403813700]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Overworld_GFX/Bounding Box/TopWall"]
 position = Vector2(126, 0)
 shape = SubResource("WorldBoundaryShape2D_tx1dd")
 
-[node name="RightWall" type="StaticBody2D" parent="Overworld_GFX/Bounding Box" unique_id=1141968739]
+[node name="RightWall" type="StaticBody2D" parent="Overworld_GFX/Bounding Box"]
 position = Vector2(1282, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Overworld_GFX/Bounding Box/RightWall" unique_id=965825821]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Overworld_GFX/Bounding Box/RightWall"]
 position = Vector2(-1, 355)
 shape = SubResource("RectangleShape2D_f1ek2")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Overworld_GFX/Bounding Box" unique_id=833023689]
+[node name="StaticBody2D" type="StaticBody2D" parent="Overworld_GFX/Bounding Box"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Overworld_GFX/Bounding Box/StaticBody2D" unique_id=426242443]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Overworld_GFX/Bounding Box/StaticBody2D"]
 position = Vector2(98, 1)
 shape = SubResource("WorldBoundaryShape2D_f1ek2")
 
-[node name="TileMap" type="TileMap" parent="." unique_id=1641996668]
+[node name="TileMap" type="TileMap" parent="Overworld_GFX"]
 show_behind_parent = true
 tile_set = SubResource("TileSet_f1ek2")
 format = 2
