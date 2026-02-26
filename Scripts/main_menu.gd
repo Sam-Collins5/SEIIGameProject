@@ -1,23 +1,21 @@
 extends Control
-
+var ReturnToMenu: Button
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	ReturnToMenu = get_node("Settings/%Return_To_Menu")
+	ReturnToMenu.pressed.connect(_on_return_to_menu_pressed)
 
 
 func _on_options_pressed() -> void:
-	get_tree().change_scene_to_file("res://settings.tscn") # Replace with function body.
-
+	get_node("%Settings").visible = true
+	get_node("%MainMenuButtons").visible = false
 
 
 func _on_return_to_menu_pressed() -> void:
-	get_tree().change_scene_to_file("res://main_menu.tscn")
+	get_node("%MainMenuButtons").visible = true
+	get_node("%Settings").visible = false
+
 
 
 func _on_full_screen_toggled(toggled_on: bool) -> void:
