@@ -1,11 +1,8 @@
-[gd_scene format=3 uid="uid://bofp34dncoilp"]
+[gd_scene load_steps=2 format=3 uid="uid://bofp34dncoilp"]
 
-[ext_resource type="PackedScene" uid="uid://827re7d2w0an" path="res://Scenes/game_manager.tscn" id="1_28flt"]
-[ext_resource type="PackedScene" uid="uid://dx82ngo7ob8ci" path="res://Scenes/battle_manager.tscn" id="2_ce3w2"]
-[ext_resource type="PackedScene" uid="uid://d1bt167m2ju2e" path="res://Scenes/battle_ui.tscn" id="3_n45e2"]
-[ext_resource type="PackedScene" uid="uid://c7ni0qflm182p" path="res://Scenes/battle_gfx.tscn" id="4_opfnp"]
+[ext_resource type="Script" uid="uid://dhwcyr8mwo5x5" path="res://Scripts/main_menu.gd" id="1_28flt"]
 
-[node name="MainMenu" type="Control" unique_id=1564459790]
+[node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -14,25 +11,9 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_28flt")
 
-[node name="GameManager" parent="." unique_id=1918295883 instance=ExtResource("1_28flt")]
-unique_name_in_owner = true
-
-[node name="BattleManager" parent="." unique_id=1436564472 instance=ExtResource("2_ce3w2")]
-unique_name_in_owner = true
-position = Vector2(-498, -181)
-
-[node name="BattleUI" parent="." unique_id=684184999 instance=ExtResource("3_n45e2")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-
-[node name="Battle_GFX" parent="." unique_id=827727990 instance=ExtResource("4_opfnp")]
-unique_name_in_owner = true
-visible = false
-
-[node name="MainMenuButtons" type="VBoxContainer" parent="." unique_id=844756200]
-unique_name_in_owner = true
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -47,20 +28,23 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 8
 
-[node name="Start Game" type="Button" parent="MainMenuButtons" unique_id=1419826390]
+[node name="Start Game" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 34
 text = "Start Game"
 
-[node name="Options" type="Button" parent="MainMenuButtons" unique_id=1122111255]
+[node name="Options" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 34
 text = "Options"
 
-[node name="Exit Game" type="Button" parent="MainMenuButtons" unique_id=1113527490]
+[node name="Exit Game" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 34
 text = "Exit Game"
+
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit Game" to="." method="_on_exit_game_pressed"]
