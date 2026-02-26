@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cykhlfeqtwmjv"]
+[gd_scene load_steps=25 format=3 uid="uid://cykhlfeqtwmjv"]
 
 [ext_resource type="PackedScene" uid="uid://827re7d2w0an" path="res://Scenes/game_manager.tscn" id="1_f1ek2"]
 [ext_resource type="Script" uid="uid://bbluvwf1herh3" path="res://Scripts/player.gd" id="1_fkybt"]
@@ -77,6 +77,15 @@ size = Vector2(47, 14.5)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8erm5"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8erm5"]
+size = Vector2(18, 61)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gymyn"]
+size = Vector2(53, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pu2lt"]
+size = Vector2(47, 10.5)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f1ek2"]
 size = Vector2(2, 730)
 
@@ -104,7 +113,7 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(640, 361)
+position = Vector2(641, 361)
 
 [node name="Battle_GFX" parent="Camera2D" instance=ExtResource("3_gymyn")]
 unique_name_in_owner = true
@@ -140,6 +149,30 @@ material = SubResource("CanvasItemMaterial_8erm5")
 scale = Vector2(2, 2)
 texture = ExtResource("7_8erm5")
 offset = Vector2(0, 7)
+
+[node name="InteractBodyRight" type="Area2D" parent="Overworld_GFX/Player"]
+position = Vector2(38, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Overworld_GFX/Player/InteractBodyRight"]
+shape = SubResource("RectangleShape2D_8erm5")
+
+[node name="InteractBodyLeft" type="Area2D" parent="Overworld_GFX/Player"]
+position = Vector2(-38, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Overworld_GFX/Player/InteractBodyLeft"]
+shape = SubResource("RectangleShape2D_8erm5")
+
+[node name="InteractBodyUp" type="Area2D" parent="Overworld_GFX/Player"]
+position = Vector2(-0.5, -26)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Overworld_GFX/Player/InteractBodyUp"]
+shape = SubResource("RectangleShape2D_gymyn")
+
+[node name="InteractBodyDown" type="Area2D" parent="Overworld_GFX/Player"]
+position = Vector2(-0.5, 40)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Overworld_GFX/Player/InteractBodyDown"]
+shape = SubResource("RectangleShape2D_pu2lt")
 
 [node name="Bounding Box" type="Node2D" parent="Overworld_GFX"]
 
