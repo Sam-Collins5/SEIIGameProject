@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cnr6eq1yf1k0o"]
 
-[ext_resource type="Script" uid="uid://dhwcyr8mwo5x5" path="res://main_menu.gd" id="1_x2hje"]
+[ext_resource type="Script" uid="uid://dhwcyr8mwo5x5" path="res://Scripts/main_menu.gd" id="1_4geyq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jwo76"]
 bg_color = Color(0, 0, 0, 1)
@@ -115,7 +115,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_cj1lu")
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "BACK TO MAIN MENU"
-script = ExtResource("1_x2hje")
+script = ExtResource("1_4geyq")
 
 [connection signal="toggled" from="VBoxContainer/PanelContainer/HBoxContainer/Full_Screen" to="VBoxContainer/PanelContainer4/Return_To_Menu" method="_on_full_screen_toggled"]
 [connection signal="pressed" from="VBoxContainer/PanelContainer4/Return_To_Menu" to="VBoxContainer/PanelContainer4/Return_To_Menu" method="_on_return_to_menu_pressed"]
