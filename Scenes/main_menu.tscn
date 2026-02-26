@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bofp34dncoilp"]
+[gd_scene load_steps=7 format=3 uid="uid://bofp34dncoilp"]
 
 [ext_resource type="Script" uid="uid://dhwcyr8mwo5x5" path="res://Scripts/main_menu.gd" id="1_28flt"]
 [ext_resource type="PackedScene" uid="uid://827re7d2w0an" path="res://Scenes/game_manager.tscn" id="2_n45e2"]
 [ext_resource type="PackedScene" uid="uid://dx82ngo7ob8ci" path="res://Scenes/battle_manager.tscn" id="3_opfnp"]
 [ext_resource type="PackedScene" uid="uid://d1bt167m2ju2e" path="res://Scenes/battle_ui.tscn" id="4_cp0ys"]
 [ext_resource type="PackedScene" uid="uid://c7ni0qflm182p" path="res://Scenes/battle_gfx.tscn" id="5_yhxw7"]
+[ext_resource type="PackedScene" uid="uid://cnr6eq1yf1k0o" path="res://Scenes/settings.tscn" id="6_opfnp"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -65,6 +66,11 @@ layout_mode = 1
 [node name="Battle_GFX" parent="." instance=ExtResource("5_yhxw7")]
 unique_name_in_owner = true
 visible = false
+
+[node name="Settings" parent="." instance=ExtResource("6_opfnp")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
 
 [connection signal="pressed" from="MainMenuButtons/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="MainMenuButtons/Exit Game" to="." method="_on_exit_game_pressed"]
