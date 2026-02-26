@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bofp34dncoilp"]
+[gd_scene load_steps=6 format=3 uid="uid://bofp34dncoilp"]
 
 [ext_resource type="Script" uid="uid://dhwcyr8mwo5x5" path="res://Scripts/main_menu.gd" id="1_28flt"]
+[ext_resource type="PackedScene" uid="uid://827re7d2w0an" path="res://Scenes/game_manager.tscn" id="2_n45e2"]
+[ext_resource type="PackedScene" uid="uid://dx82ngo7ob8ci" path="res://Scenes/battle_manager.tscn" id="3_opfnp"]
+[ext_resource type="PackedScene" uid="uid://d1bt167m2ju2e" path="res://Scenes/battle_ui.tscn" id="4_cp0ys"]
+[ext_resource type="PackedScene" uid="uid://c7ni0qflm182p" path="res://Scenes/battle_gfx.tscn" id="5_yhxw7"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -13,7 +17,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_28flt")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="MainMenuButtons" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -28,23 +33,38 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 8
 
-[node name="Start Game" type="Button" parent="VBoxContainer"]
+[node name="Start Game" type="Button" parent="MainMenuButtons"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 34
 text = "Start Game"
 
-[node name="Options" type="Button" parent="VBoxContainer"]
+[node name="Options" type="Button" parent="MainMenuButtons"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 34
 text = "Options"
 
-[node name="Exit Game" type="Button" parent="VBoxContainer"]
+[node name="Exit Game" type="Button" parent="MainMenuButtons"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 34
 text = "Exit Game"
 
-[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="VBoxContainer/Exit Game" to="." method="_on_exit_game_pressed"]
+[node name="GameManager" parent="." instance=ExtResource("2_n45e2")]
+unique_name_in_owner = true
+
+[node name="BattleManager" parent="." instance=ExtResource("3_opfnp")]
+unique_name_in_owner = true
+
+[node name="BattleUI" parent="." instance=ExtResource("4_cp0ys")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+
+[node name="Battle_GFX" parent="." instance=ExtResource("5_yhxw7")]
+unique_name_in_owner = true
+visible = false
+
+[connection signal="pressed" from="MainMenuButtons/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MainMenuButtons/Exit Game" to="." method="_on_exit_game_pressed"]

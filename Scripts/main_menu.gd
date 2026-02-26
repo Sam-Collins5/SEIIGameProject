@@ -12,12 +12,12 @@ func _process(delta: float) -> void:
 
 
 func _on_options_pressed() -> void:
-	get_tree().change_scene_to_file("res://settings.tscn") # Replace with function body.
+	get_tree().change_scene_to_file("res://Scenes/settings.tscn") # Replace with function body.
 
 
 
 func _on_return_to_menu_pressed() -> void:
-	get_tree().change_scene_to_file("res://main_menu.tscn")
+	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 
 
 func _on_full_screen_toggled(toggled_on: bool) -> void:
