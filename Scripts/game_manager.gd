@@ -15,6 +15,8 @@ var mainMenuStartButton: Button
 var mainMenuOptionsButton: Button
 var mainMenuExitButton: Button
 
+var pauseMenu: Control
+
 func _ready() -> void:
 	battleManager = get_node("%BattleManager")
 	
@@ -22,7 +24,9 @@ func _ready() -> void:
 		game_state = GameState.TITLE_SCREEN
 		init_main_menu()
 	elif get_tree().root.get_child(0).name != "Overworld":
+		pauseMenu = get_node("%PauseMenu")
 		game_state = GameState.OVERWORLD
+		
 
 func init_main_menu() -> void:
 	mainMenuStartButton = get_node("%MainMenuButtons/Start Game")
@@ -71,3 +75,6 @@ func state_switch(state: GameState) -> void:
 		switch_to_overworld()
 	elif state == GameState.BATTLE:
 		switch_to_battle()
+
+func _pause_toggle() -> void:
+	pass
