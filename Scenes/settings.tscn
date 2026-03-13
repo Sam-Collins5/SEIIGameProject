@@ -57,6 +57,7 @@ text = "Windowed Mode:"
 horizontal_alignment = 1
 
 [node name="Full_Screen" type="Button" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_nkug2")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_x2hje")
