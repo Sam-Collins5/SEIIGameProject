@@ -1,5 +1,5 @@
-# All sprint reports 1-4
-
+# All documents needed to satisfy the midterm requirements.
+    Sprint reports 1-4
     Product vision
     Project goals; Release plan
     Sprint reports for sprints 1-4.
