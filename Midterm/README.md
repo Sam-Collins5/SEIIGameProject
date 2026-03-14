@@ -1,6 +1,6 @@
 # All sprint reports 1-4
 
-    Product vision.
+    Product vision
     Project goals; Release plan
     Sprint reports for sprints 1-4.
     Exported copy of the Trello/Planner Board with backloag and individual sprint items clearly marked.
