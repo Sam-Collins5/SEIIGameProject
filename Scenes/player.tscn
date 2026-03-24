@@ -1,10 +1,12 @@
-[gd_scene load_steps=25 format=3 uid="uid://cykhlfeqtwmjv"]
+[gd_scene load_steps=27 format=3 uid="uid://cykhlfeqtwmjv"]
 
 [ext_resource type="PackedScene" uid="uid://827re7d2w0an" path="res://Scenes/game_manager.tscn" id="1_f1ek2"]
 [ext_resource type="Script" uid="uid://bbluvwf1herh3" path="res://Scripts/player.gd" id="1_fkybt"]
 [ext_resource type="PackedScene" uid="uid://dx82ngo7ob8ci" path="res://Scenes/battle_manager.tscn" id="2_tx1dd"]
 [ext_resource type="PackedScene" uid="uid://c7ni0qflm182p" path="res://Scenes/battle_gfx.tscn" id="3_gymyn"]
 [ext_resource type="PackedScene" uid="uid://d1bt167m2ju2e" path="res://Scenes/battle_ui.tscn" id="4_pu2lt"]
+[ext_resource type="Script" uid="uid://dej2krqywqrkd" path="res://Scripts/pause_menu.gd" id="5_tx1dd"]
+[ext_resource type="PackedScene" uid="uid://cnr6eq1yf1k0o" path="res://Scenes/settings.tscn" id="6_gymyn"]
 [ext_resource type="Texture2D" uid="uid://76dokqo7hc3u" path="res://Assets/Sprites/Players/Rouge/rouge_spritesheet.png" id="6_x3wgy"]
 [ext_resource type="Texture2D" uid="uid://m2s5l74svgva" path="res://Assets/Sprites/Scenery/tile.png" id="7_3smsa"]
 [ext_resource type="Texture2D" uid="uid://dwb5u54mi6ya6" path="res://Assets/Sprites/Scenery/shadow.png" id="7_8erm5"]
@@ -122,6 +124,65 @@ visible = false
 [node name="BattleUI" parent="Camera2D" instance=ExtResource("4_pu2lt")]
 unique_name_in_owner = true
 visible = false
+
+[node name="Settings" parent="Camera2D" instance=ExtResource("6_gymyn")]
+unique_name_in_owner = true
+visible = false
+
+[node name="PauseMenu" type="Control" parent="Camera2D"]
+unique_name_in_owner = true
+visible = false
+z_index = 999
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_tx1dd")
+
+[node name="PauseMenuButtons" type="VBoxContainer" parent="Camera2D/PauseMenu"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -273.25
+offset_top = -182.625
+offset_right = 273.25
+offset_bottom = 182.625
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="ContinueGame" type="Button" parent="Camera2D/PauseMenu/PauseMenuButtons"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 34
+text = "Continue Game"
+
+[node name="Options" type="Button" parent="Camera2D/PauseMenu/PauseMenuButtons"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 34
+text = "Options"
+
+[node name="BackToMainMenu" type="Button" parent="Camera2D/PauseMenu/PauseMenuButtons"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 34
+text = "Back to Main Menu"
 
 [node name="Overworld_GFX" type="Node2D" parent="."]
 unique_name_in_owner = true
