@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bofp34dncoilp"]
+[gd_scene format=3 uid="uid://bofp34dncoilp"]
 
 [ext_resource type="Script" uid="uid://dhwcyr8mwo5x5" path="res://Scripts/main_menu.gd" id="1_28flt"]
 [ext_resource type="PackedScene" uid="uid://827re7d2w0an" path="res://Scenes/game_manager.tscn" id="2_n45e2"]
@@ -7,7 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://c7ni0qflm182p" path="res://Scenes/battle_gfx.tscn" id="5_yhxw7"]
 [ext_resource type="PackedScene" uid="uid://cnr6eq1yf1k0o" path="res://Scenes/settings.tscn" id="6_opfnp"]
 
-[node name="MainMenu" type="Control"]
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_opfnp"]
+
+[node name="MainMenu" type="Control" unique_id=1247731053]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -18,29 +20,29 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_28flt")
 
-[node name="GameManager" parent="." instance=ExtResource("2_n45e2")]
+[node name="GameManager" parent="." unique_id=1626966012 instance=ExtResource("2_n45e2")]
 unique_name_in_owner = true
 
-[node name="BattleManager" parent="." instance=ExtResource("3_opfnp")]
+[node name="BattleManager" parent="." unique_id=1538357254 instance=ExtResource("3_opfnp")]
 unique_name_in_owner = true
 
-[node name="BattleUI" parent="." instance=ExtResource("4_cp0ys")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-
-[node name="Battle_GFX" parent="." instance=ExtResource("5_yhxw7")]
-unique_name_in_owner = true
-visible = false
-
-[node name="Settings" parent="." instance=ExtResource("6_opfnp")]
+[node name="BattleUI" parent="." unique_id=1546178966 instance=ExtResource("4_cp0ys")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Battle_GFX" parent="." unique_id=483790056 instance=ExtResource("5_yhxw7")]
+unique_name_in_owner = true
+visible = false
 
-[node name="MainMenuButtons" type="VBoxContainer" parent="Camera2D"]
+[node name="Settings" parent="." unique_id=1980910498 instance=ExtResource("6_opfnp")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=719326595]
+
+[node name="MainMenuButtons" type="VBoxContainer" parent="Camera2D" unique_id=121836622]
 unique_name_in_owner = true
 anchors_preset = 8
 anchor_left = 0.5
@@ -55,19 +57,27 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 8
 
-[node name="Start Game" type="Button" parent="Camera2D/MainMenuButtons"]
+[node name="Start Game" type="Button" parent="Camera2D/MainMenuButtons" unique_id=1113791968]
+material = SubResource("CanvasItemMaterial_opfnp")
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 34
 text = "Start Game"
 
-[node name="Options" type="Button" parent="Camera2D/MainMenuButtons"]
+[node name="TextureRect" type="TextureRect" parent="Camera2D/MainMenuButtons/Start Game" unique_id=1472752900]
+layout_mode = 0
+offset_left = -236.75
+offset_top = -121.375
+offset_right = 786.25
+offset_bottom = 152.625
+
+[node name="Options" type="Button" parent="Camera2D/MainMenuButtons" unique_id=18141335]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 34
 text = "Options"
 
-[node name="Exit Game" type="Button" parent="Camera2D/MainMenuButtons"]
+[node name="Exit Game" type="Button" parent="Camera2D/MainMenuButtons" unique_id=854470896]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 34
