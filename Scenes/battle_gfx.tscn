@@ -1,36 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7ni0qflm182p"]
+[gd_scene format=3 uid="uid://c7ni0qflm182p"]
 
 [ext_resource type="Script" uid="uid://dbw7pjqhfsg2q" path="res://Scripts/battle_player.gd" id="1_kt4s3"]
-[ext_resource type="Texture2D" uid="uid://c2a07ii3ow0tp" path="res://icon.svg" id="2_5eagx"]
+[ext_resource type="Texture2D" uid="uid://2ajp06r5h7d" path="res://Assets/Sprites/Players/Rouge/rouge_idle.png" id="2_llxbv"]
 [ext_resource type="Script" uid="uid://ymbpb8q54tc6" path="res://Scripts/enemy.gd" id="3_fysxo"]
+[ext_resource type="Texture2D" uid="uid://bv2j6s4l3mn0f" path="res://Assets/Sprites/Bosses/Tarnoff/tarnoff_idle.png" id="4_ekt2r"]
 
-[node name="Battle_GFX" type="Node2D"]
+[node name="Battle_GFX" type="Node2D" unique_id=531540765]
 
-[node name="Battle_Player" type="Node2D" parent="."]
+[node name="Battle_Player" type="Node2D" parent="." unique_id=914930256]
 unique_name_in_owner = true
 script = ExtResource("1_kt4s3")
 
-[node name="Player" type="Sprite2D" parent="Battle_Player"]
-position = Vector2(-480, -148)
-texture = ExtResource("2_5eagx")
+[node name="Player" type="Sprite2D" parent="Battle_Player" unique_id=631013640]
+texture_filter = 1
+position = Vector2(-449, -114.5)
+scale = Vector2(2.9375, 3.09375)
+texture = ExtResource("2_llxbv")
 
-[node name="Enemy" type="Node2D" parent="."]
+[node name="Enemy" type="Node2D" parent="." unique_id=1334808925]
 unique_name_in_owner = true
 script = ExtResource("3_fysxo")
 
-[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
-position = Vector2(476, -147)
-scale = Vector2(1.6875, 0.8046875)
-texture = ExtResource("2_5eagx")
+[node name="Sprite2D" type="Sprite2D" parent="Enemy" unique_id=804069170]
+texture_filter = 1
+position = Vector2(216, -320.00003)
+scale = Vector2(3.0382354, 2.9965277)
+texture = ExtResource("4_ekt2r")
 
-[node name="AngryEyebrow" type="Sprite2D" parent="Enemy"]
-position = Vector2(414, -192.99998)
-rotation = 0.5725916
-scale = Vector2(1, 0.1484375)
-texture = ExtResource("2_5eagx")
+[node name="Battle_Scene" type="Node2D" parent="." unique_id=1642985067]
 
-[node name="AngryEyebrow2" type="Sprite2D" parent="Enemy"]
-position = Vector2(538, -192.99998)
-rotation = -0.572468
-scale = Vector2(1, 0.1484375)
-texture = ExtResource("2_5eagx")
+[node name="Sprite2D" type="Sprite2D" parent="Battle_Scene" unique_id=949238378]
