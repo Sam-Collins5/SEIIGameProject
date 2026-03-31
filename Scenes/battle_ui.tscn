@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1bt167m2ju2e"]
+[gd_scene format=3 uid="uid://d1bt167m2ju2e"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1nqfl"]
 
@@ -6,7 +6,7 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qyamm"]
 
-[node name="BattleUI" type="Control"]
+[node name="BattleUI" type="Control" unique_id=692038737]
 z_index = 999
 layout_mode = 3
 anchors_preset = 15
@@ -15,27 +15,30 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Question_UI" type="Control" parent="."]
+[node name="Question_UI" type="Control" parent="." unique_id=937551342]
 unique_name_in_owner = true
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Question" type="ColorRect" parent="Question_UI"]
+[node name="Question" type="ColorRect" parent="Question_UI" unique_id=2108762843]
 layout_mode = 0
-offset_left = -631.0
-offset_top = -350.0
-offset_right = 631.0
-offset_bottom = 67.0
-color = Color(0.34901962, 0.34901962, 0.34901962, 0.6509804)
+offset_left = -655.0
+offset_top = -392.0
+offset_right = 661.0
+offset_bottom = 368.0
+color = Color(0, 0, 0, 0.68235296)
 
-[node name="Question_Label" type="Label" parent="Question_UI/Question"]
+[node name="Question_Label" type="Label" parent="Question_UI/Question" unique_id=466549672]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -14.0
+offset_top = -141.0
+offset_right = 16.0
+offset_bottom = -128.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 34
@@ -43,7 +46,7 @@ text = "Question"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Buttons" type="Control" parent="Question_UI"]
+[node name="Buttons" type="Control" parent="Question_UI" unique_id=500805401]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -51,15 +54,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button1_BG" type="ColorRect" parent="Question_UI/Buttons"]
+[node name="Button1_BG" type="ColorRect" parent="Question_UI/Buttons" unique_id=1549207229]
 layout_mode = 0
 offset_left = -630.0
 offset_top = 218.0
 offset_right = -5.0
 offset_bottom = 348.0
-color = Color(0.99999994, 0.29310238, 0.2919576, 1)
+color = Color(0.4370619, 0, 0.042321146, 1)
 
-[node name="Button1" type="Button" parent="Question_UI/Buttons/Button1_BG"]
+[node name="Button1" type="Button" parent="Question_UI/Buttons/Button1_BG" unique_id=1824029495]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -70,8 +73,9 @@ grow_vertical = 2
 focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_1nqfl")
 keep_pressed_outside = true
+autowrap_mode = 2
 
-[node name="Button1Label" type="Label" parent="Question_UI/Buttons/Button1_BG/Button1"]
+[node name="Button1Label" type="Label" parent="Question_UI/Buttons/Button1_BG/Button1" unique_id=1220329165]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -83,16 +87,17 @@ theme_override_font_sizes/font_size = 34
 text = "Choice 1"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
-[node name="Button2_BG" type="ColorRect" parent="Question_UI/Buttons"]
+[node name="Button2_BG" type="ColorRect" parent="Question_UI/Buttons" unique_id=406630299]
 layout_mode = 0
 offset_left = 5.0
 offset_top = 218.0
 offset_right = 630.0
 offset_bottom = 348.0
-color = Color(1.1070073e-06, 0.8496398, 0.22326455, 1)
+color = Color(0.43529412, 0, 0.043137256, 1)
 
-[node name="Button2" type="Button" parent="Question_UI/Buttons/Button2_BG"]
+[node name="Button2" type="Button" parent="Question_UI/Buttons/Button2_BG" unique_id=1390111141]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -104,7 +109,7 @@ focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_1nqfl")
 keep_pressed_outside = true
 
-[node name="Button2Label" type="Label" parent="Question_UI/Buttons/Button2_BG/Button2"]
+[node name="Button2Label" type="Label" parent="Question_UI/Buttons/Button2_BG/Button2" unique_id=968917144]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -116,16 +121,17 @@ theme_override_font_sizes/font_size = 34
 text = "Choice 2"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
 
-[node name="Button3_BG" type="ColorRect" parent="Question_UI/Buttons"]
+[node name="Button3_BG" type="ColorRect" parent="Question_UI/Buttons" unique_id=390910111]
 layout_mode = 0
 offset_left = 5.0
 offset_top = 77.0
 offset_right = 630.0
 offset_bottom = 207.0
-color = Color(0, 0.76001483, 0.9397159, 1)
+color = Color(0.43529412, 0, 0.043137256, 1)
 
-[node name="Button3" type="Button" parent="Question_UI/Buttons/Button3_BG"]
+[node name="Button3" type="Button" parent="Question_UI/Buttons/Button3_BG" unique_id=1810864007]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -137,7 +143,7 @@ focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_1nqfl")
 keep_pressed_outside = true
 
-[node name="Button3Label" type="Label" parent="Question_UI/Buttons/Button3_BG/Button3"]
+[node name="Button3Label" type="Label" parent="Question_UI/Buttons/Button3_BG/Button3" unique_id=778804042]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -150,15 +156,15 @@ text = "Choice 3"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button4_BG" type="ColorRect" parent="Question_UI/Buttons"]
+[node name="Button4_BG" type="ColorRect" parent="Question_UI/Buttons" unique_id=356787377]
 layout_mode = 0
 offset_left = -630.0
 offset_top = 77.0
 offset_right = -5.0
 offset_bottom = 207.0
-color = Color(0.98506993, 0.7474702, 0, 1)
+color = Color(0.43529412, 0, 0.043137256, 1)
 
-[node name="Button4" type="Button" parent="Question_UI/Buttons/Button4_BG"]
+[node name="Button4" type="Button" parent="Question_UI/Buttons/Button4_BG" unique_id=174715674]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -170,7 +176,7 @@ focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_1nqfl")
 keep_pressed_outside = true
 
-[node name="Button4Label" type="Label" parent="Question_UI/Buttons/Button4_BG/Button4"]
+[node name="Button4Label" type="Label" parent="Question_UI/Buttons/Button4_BG/Button4" unique_id=1216865194]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -183,7 +189,7 @@ text = "Choice 4"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="WrongAnswer_BG" type="ColorRect" parent="Question_UI"]
+[node name="WrongAnswer_BG" type="ColorRect" parent="Question_UI" unique_id=831644540]
 unique_name_in_owner = true
 visible = false
 layout_mode = 0
@@ -193,7 +199,7 @@ offset_right = 631.0
 offset_bottom = 67.0
 color = Color(1, 0.29411766, 0.2901961, 1)
 
-[node name="WrongAnswer_Label" type="Label" parent="Question_UI/WrongAnswer_BG"]
+[node name="WrongAnswer_Label" type="Label" parent="Question_UI/WrongAnswer_BG" unique_id=1697586579]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -205,7 +211,7 @@ text = "Wrong Answer! >:("
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CorrectAnswer_BG" type="ColorRect" parent="Question_UI"]
+[node name="CorrectAnswer_BG" type="ColorRect" parent="Question_UI" unique_id=1199441692]
 unique_name_in_owner = true
 visible = false
 layout_mode = 0
@@ -215,7 +221,7 @@ offset_right = 631.0
 offset_bottom = 67.0
 color = Color(0, 0.8509804, 0.22352941, 1)
 
-[node name="CorrectAnswer_Label" type="Label" parent="Question_UI/CorrectAnswer_BG"]
+[node name="CorrectAnswer_Label" type="Label" parent="Question_UI/CorrectAnswer_BG" unique_id=790801565]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -227,21 +233,21 @@ text = "Correct! :D"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Battle_Buttons" type="Control" parent="."]
+[node name="Battle_Buttons" type="Control" parent="." unique_id=1897752439]
 unique_name_in_owner = true
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Attack_Button_BG" type="ColorRect" parent="Battle_Buttons"]
+[node name="Attack_Button_BG" type="ColorRect" parent="Battle_Buttons" unique_id=1764360727]
 layout_mode = 0
 offset_left = -630.0
 offset_top = 218.0
 offset_right = -220.0
 offset_bottom = 348.0
-color = Color(1, 0.29411766, 0.2901961, 1)
+color = Color(0, 0, 0, 0.68235296)
 
-[node name="Attack_Button" type="Button" parent="Battle_Buttons/Attack_Button_BG"]
+[node name="Attack_Button" type="Button" parent="Battle_Buttons/Attack_Button_BG" unique_id=1076726330]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -253,7 +259,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_3ibte")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_qyamm")
 keep_pressed_outside = true
 
-[node name="Label" type="Label" parent="Battle_Buttons/Attack_Button_BG/Attack_Button"]
+[node name="Label" type="Label" parent="Battle_Buttons/Attack_Button_BG/Attack_Button" unique_id=265670822]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -265,15 +271,15 @@ text = "Attack"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Defend_Button_BG" type="ColorRect" parent="Battle_Buttons"]
+[node name="Defend_Button_BG" type="ColorRect" parent="Battle_Buttons" unique_id=753565303]
 layout_mode = 0
 offset_left = -205.0
 offset_top = 218.0
 offset_right = 205.0
 offset_bottom = 348.0
-color = Color(0, 0.7607843, 0.9411765, 1)
+color = Color(0, 0, 0, 0.68235296)
 
-[node name="Defend_Button" type="Button" parent="Battle_Buttons/Defend_Button_BG"]
+[node name="Defend_Button" type="Button" parent="Battle_Buttons/Defend_Button_BG" unique_id=604945000]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -285,7 +291,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_3ibte")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_qyamm")
 keep_pressed_outside = true
 
-[node name="Label" type="Label" parent="Battle_Buttons/Defend_Button_BG/Defend_Button"]
+[node name="Label" type="Label" parent="Battle_Buttons/Defend_Button_BG/Defend_Button" unique_id=939424694]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -297,15 +303,15 @@ text = "Defend"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Question_Button_BG" type="ColorRect" parent="Battle_Buttons"]
+[node name="Question_Button_BG" type="ColorRect" parent="Battle_Buttons" unique_id=1223135252]
 layout_mode = 0
 offset_left = 220.0
 offset_top = 218.0
 offset_right = 630.0
 offset_bottom = 348.0
-color = Color(0.7693674, 0.5851078, 1, 1)
+color = Color(0, 0, 0, 0.68235296)
 
-[node name="Question_Button" type="Button" parent="Battle_Buttons/Question_Button_BG"]
+[node name="Question_Button" type="Button" parent="Battle_Buttons/Question_Button_BG" unique_id=1008308558]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -317,7 +323,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_3ibte")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_qyamm")
 keep_pressed_outside = true
 
-[node name="Label" type="Label" parent="Battle_Buttons/Question_Button_BG/Question_Button"]
+[node name="Label" type="Label" parent="Battle_Buttons/Question_Button_BG/Question_Button" unique_id=1572097618]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -329,14 +335,14 @@ text = "Question"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Attack_Popup" type="Control" parent="."]
+[node name="Attack_Popup" type="Control" parent="." unique_id=1785000272]
 unique_name_in_owner = true
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ColorRect" type="ColorRect" parent="Attack_Popup"]
+[node name="ColorRect" type="ColorRect" parent="Attack_Popup" unique_id=2080777424]
 layout_mode = 0
 offset_left = -630.0
 offset_top = 218.0
@@ -344,7 +350,7 @@ offset_right = 630.0
 offset_bottom = 348.0
 color = Color(0.16206557, 0.1620656, 0.16206557, 1)
 
-[node name="Attack_Text" type="Label" parent="Attack_Popup/ColorRect"]
+[node name="Attack_Text" type="Label" parent="Attack_Popup/ColorRect" unique_id=2126991840]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -356,14 +362,14 @@ theme_override_font_sizes/font_size = 42
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Defend_Popup" type="Control" parent="."]
+[node name="Defend_Popup" type="Control" parent="." unique_id=983628388]
 unique_name_in_owner = true
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ColorRect" type="ColorRect" parent="Defend_Popup"]
+[node name="ColorRect" type="ColorRect" parent="Defend_Popup" unique_id=1206427557]
 layout_mode = 0
 offset_left = -630.0
 offset_top = 218.0
@@ -371,7 +377,7 @@ offset_right = 630.0
 offset_bottom = 348.0
 color = Color(0.16206557, 0.1620656, 0.16206557, 1)
 
-[node name="Defend_Text" type="Label" parent="Defend_Popup/ColorRect"]
+[node name="Defend_Text" type="Label" parent="Defend_Popup/ColorRect" unique_id=639910104]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -383,14 +389,14 @@ theme_override_font_sizes/font_size = 42
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Question_Popup" type="Control" parent="."]
+[node name="Question_Popup" type="Control" parent="." unique_id=1659536722]
 unique_name_in_owner = true
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ColorRect" type="ColorRect" parent="Question_Popup"]
+[node name="ColorRect" type="ColorRect" parent="Question_Popup" unique_id=1507682306]
 layout_mode = 0
 offset_left = -630.0
 offset_top = 218.0
@@ -398,7 +404,7 @@ offset_right = 630.0
 offset_bottom = 348.0
 color = Color(0.16206557, 0.1620656, 0.16206557, 1)
 
-[node name="Question_Attack_Text" type="Label" parent="Question_Popup/ColorRect"]
+[node name="Question_Attack_Text" type="Label" parent="Question_Popup/ColorRect" unique_id=793654656]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -410,14 +416,14 @@ theme_override_font_sizes/font_size = 42
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Enemy_Popup" type="Control" parent="."]
+[node name="Enemy_Popup" type="Control" parent="." unique_id=2091907413]
 unique_name_in_owner = true
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ColorRect" type="ColorRect" parent="Enemy_Popup"]
+[node name="ColorRect" type="ColorRect" parent="Enemy_Popup" unique_id=1074333889]
 layout_mode = 0
 offset_left = -630.0
 offset_top = 218.0
@@ -425,7 +431,7 @@ offset_right = 630.0
 offset_bottom = 348.0
 color = Color(0.16206557, 0.1620656, 0.16206557, 1)
 
-[node name="Enemy_Text" type="Label" parent="Enemy_Popup/ColorRect"]
+[node name="Enemy_Text" type="Label" parent="Enemy_Popup/ColorRect" unique_id=1357175604]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15

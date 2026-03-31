@@ -113,12 +113,12 @@ func _ready() -> void:
 	enemy_timer.timeout.connect(_on_enemy_timer_end)
 	
 	var question_data: Array
-	question_data.append("What's 9+10?")
-	question_data.append("21")
-	question_data.append("24")
-	question_data.append("19")
-	question_data.append("7")
-	question_data.append(3)
+	question_data.append("Why are tests especially important in AI-assisted development?")
+	question_data.append("AI is sick and cool and we should use it in everything obviously")
+	question_data.append("Generated code may be incorrect for your use case")
+	question_data.append("AI replaces developers")
+	question_data.append("AI debugs itself and doesn’t have errors")
+	question_data.append(2)
 	set_question(question_data)
 
 
