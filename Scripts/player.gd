@@ -98,7 +98,7 @@ func _physics_process(delta):
 	
 	
 func _process(delta):
-	if Input.is_key_pressed(KEY_B):
+	if Input.is_key_pressed(KEY_1):
 		var game_manager = get_node("%GameManager")
 		game_manager.switch_to_battle()
 	if Input.is_action_just_pressed("Interact"):
