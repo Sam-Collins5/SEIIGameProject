@@ -13,7 +13,7 @@ var battlePlayer: Node2D
 
 var mainMenuStartButton: TextureButton
 var mainMenuOptionsButton: TextureButton
-var mainMenuExitButton: Button
+var mainMenuExitButton: TextureButton
 
 var pauseMenu: Control
 

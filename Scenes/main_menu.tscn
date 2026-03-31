@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bofp34dncoilp"]
+[gd_scene load_steps=15 format=3 uid="uid://bofp34dncoilp"]
 
 [ext_resource type="Script" uid="uid://dhwcyr8mwo5x5" path="res://Scripts/main_menu.gd" id="1_28flt"]
 [ext_resource type="PackedScene" uid="uid://827re7d2w0an" path="res://Scenes/game_manager.tscn" id="2_n45e2"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cpxb7od7t5n7w" path="res://Assets/Sprites/UI/Buttons/options_idle.png" id="10_vtepg"]
 [ext_resource type="Texture2D" uid="uid://ckpjr7jedvhpk" path="res://Assets/Sprites/UI/Buttons/options_pressed.png" id="11_8dnnj"]
 [ext_resource type="Texture2D" uid="uid://dk2jq86g58agy" path="res://Assets/Sprites/UI/Buttons/options_hovered.png" id="12_m3bi6"]
+[ext_resource type="Texture2D" uid="uid://fpuov5ptu0ec" path="res://Assets/Sprites/UI/Buttons/end_game.png" id="13_5egv6"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_opfnp"]
 
@@ -55,13 +56,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -128.0
-offset_top = -163.8125
-offset_right = 128.0
-offset_bottom = 163.8125
+offset_left = -189.5
+offset_top = -247.75
+offset_right = 189.5
+offset_bottom = 247.75
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 8
+theme_override_constants/separation = 0
 
 [node name="Start Game" type="TextureButton" parent="Camera2D/MainMenuButtons"]
 material = SubResource("CanvasItemMaterial_opfnp")
@@ -71,7 +72,7 @@ texture_normal = ExtResource("7_cp0ys")
 texture_pressed = ExtResource("8_t1dhk")
 texture_hover = ExtResource("9_5egv6")
 ignore_texture_size = true
-stretch_mode = 3
+stretch_mode = 0
 
 [node name="Options" type="TextureButton" parent="Camera2D/MainMenuButtons"]
 layout_mode = 2
@@ -80,13 +81,14 @@ texture_normal = ExtResource("10_vtepg")
 texture_pressed = ExtResource("11_8dnnj")
 texture_hover = ExtResource("12_m3bi6")
 ignore_texture_size = true
-stretch_mode = 3
+stretch_mode = 0
 
-[node name="Exit Game" type="Button" parent="Camera2D/MainMenuButtons"]
+[node name="Exit Game" type="TextureButton" parent="Camera2D/MainMenuButtons"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 34
-text = "Exit Game"
+texture_normal = ExtResource("13_5egv6")
+ignore_texture_size = true
+stretch_mode = 0
 
 [connection signal="pressed" from="Camera2D/MainMenuButtons/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Camera2D/MainMenuButtons/Exit Game" to="." method="_on_exit_game_pressed"]
