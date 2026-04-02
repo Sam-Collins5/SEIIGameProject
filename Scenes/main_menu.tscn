@@ -65,6 +65,7 @@ grow_vertical = 2
 theme_override_constants/separation = 0
 
 [node name="Start Game" type="TextureButton" parent="Camera2D/MainMenuButtons"]
+texture_filter = 1
 material = SubResource("CanvasItemMaterial_opfnp")
 layout_mode = 2
 size_flags_vertical = 3
