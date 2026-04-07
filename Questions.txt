@@ -1,0 +1,16 @@
+1
+The answer is A.
+A
+B
+C
+D
+A
+----
+2
+The answer is B.
+A
+B
+C
+D
+B
+----
