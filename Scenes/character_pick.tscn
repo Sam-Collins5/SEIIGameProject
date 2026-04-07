@@ -1,16 +1,15 @@
 [gd_scene format=3 uid="uid://co86c7crd35bg"]
 
 [ext_resource type="Texture2D" uid="uid://dwb5u54mi6ya6" path="res://Assets/Sprites/Scenery/shadow.png" id="1_6qiuc"]
-[ext_resource type="Script" path="res://Scenes/character_pick.gd" id="1_w8jbf"]
+[ext_resource type="Texture2D" uid="uid://d2rmdw5nae3bc" path="res://Assets/Sprites/UI/concentration.png" id="1_ik5mf"]
 [ext_resource type="Texture2D" uid="uid://bphpy6jjtmwon" path="res://Assets/Sprites/Players/Paladin/paladin_spritesheet.png" id="2_oapvl"]
 [ext_resource type="Texture2D" uid="uid://76dokqo7hc3u" path="res://Assets/Sprites/Players/Rouge/rouge_spritesheet.png" id="2_pcmfy"]
-[ext_resource type="Script" path="res://Scripts/paladin.gd" id="4_16yd5"]
+[ext_resource type="Script" uid="uid://cn4pe7ts842ej" path="res://Scripts/Character_Pick/paladin_spin.gd" id="3_m4cfp"]
 [ext_resource type="Texture2D" uid="uid://dypaimojii0w8" path="res://Assets/Sprites/Players/Wizard/wizard_spritesheet.png" id="4_w8jbf"]
 [ext_resource type="Texture2D" uid="uid://1sfihx3e3dp8" path="res://Assets/Sprites/Players/Alchemist/alchemist_spritesheet.png" id="5_16yd5"]
-[ext_resource type="Script" path="res://Scripts/rouge.gd" id="6_uulht"]
-[ext_resource type="Script" path="res://Scripts/wizard.gd" id="8_ik5mf"]
-[ext_resource type="Script" path="res://Scenes/alchemist.gd" id="10_4f6l0"]
-[ext_resource type="Texture2D" path="res://Assets/Sprites/concetration.png" id="11_4f6l0"]
+[ext_resource type="Script" uid="uid://c52injvy0njey" path="res://Scripts/Character_Pick/rouge_spin.gd" id="5_ik5mf"]
+[ext_resource type="Script" uid="uid://c3pa1fnxdn2dn" path="res://Scripts/Character_Pick/wizard_spin.gd" id="7_4f6l0"]
+[ext_resource type="Script" uid="uid://cnwefjyv1hddb" path="res://Scripts/Character_Pick/alchemist_spin.gd" id="9_ttd4r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m4cfp"]
 atlas = ExtResource("2_oapvl")
@@ -213,7 +212,6 @@ animations = [{
 }]
 
 [node name="CharacterPick" type="Node2D" unique_id=1615786409]
-script = ExtResource("1_w8jbf")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=903728516]
 
@@ -238,6 +236,7 @@ text = "Cyber Security"
 
 [node name="LineEdit2" type="LineEdit" parent="Node2D/ColorRect" unique_id=2080998638]
 modulate = Color(1, 0.84705883, 0, 1)
+z_index = 2
 texture_filter = 1
 layout_mode = 0
 offset_left = 451.0
@@ -248,6 +247,7 @@ text = "Information  Systems"
 
 [node name="LineEdit3" type="LineEdit" parent="Node2D/ColorRect" unique_id=2021206398]
 modulate = Color(1, 0.84705883, 0, 1)
+z_index = 2
 texture_filter = 1
 layout_mode = 0
 offset_left = 755.0
@@ -267,11 +267,34 @@ offset_bottom = 655.0
 text = "Information  Technology"
 
 [node name="ColorRect2" type="ColorRect" parent="Node2D" unique_id=1429774010]
+z_index = 5
 offset_left = -85.0
 offset_top = 646.0
 offset_right = 1398.0
 offset_bottom = 832.0
 color = Color(0, 0, 0.14509805, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Node2D" unique_id=83284301]
+z_index = 1
+offset_left = 691.0
+offset_top = 527.0
+offset_right = 852.0
+offset_bottom = 713.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Node2D" unique_id=1010614068]
+z_index = 1
+offset_left = 390.0
+offset_top = 529.0
+offset_right = 551.0
+offset_bottom = 715.0
+color = Color(0, 0, 0, 1)
+
+[node name="Background" type="Sprite2D" parent="Node2D" unique_id=311824221]
+texture_filter = 1
+position = Vector2(644, 321)
+scale = Vector2(4.671875, 4.5347223)
+texture = ExtResource("1_ik5mf")
 
 [node name="Pedestals" type="Node2D" parent="." unique_id=465277142]
 position = Vector2(107, 139)
@@ -291,6 +314,7 @@ scale = Vector2(5.890626, 3.8593745)
 texture = ExtResource("1_6qiuc")
 
 [node name="alchemist_place" type="Sprite2D" parent="Pedestals" unique_id=1419739799]
+z_index = 1
 texture_filter = 1
 position = Vector2(664, 367)
 scale = Vector2(5.984376, 3.500001)
@@ -312,7 +336,7 @@ scale = Vector2(3.9999995, 4.65625)
 sprite_frames = SubResource("SpriteFrames_iyhng")
 animation = &"paladin_spin"
 frame_progress = 0.4257618
-script = ExtResource("4_16yd5")
+script = ExtResource("3_m4cfp")
 
 [node name="AnimationPlayer1" type="AnimationPlayer" parent="Characters/paladin" unique_id=1421279185]
 
@@ -324,7 +348,7 @@ scale = Vector2(3.9843748, 4.21875)
 sprite_frames = SubResource("SpriteFrames_m4cfp")
 animation = &"rouge_spin"
 frame_progress = 0.19224659
-script = ExtResource("6_uulht")
+script = ExtResource("5_ik5mf")
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="Characters/rouge" unique_id=723844283]
 root_node = NodePath("../../paladin")
@@ -337,7 +361,7 @@ scale = Vector2(5.046875, 4.5781245)
 sprite_frames = SubResource("SpriteFrames_rtomx")
 animation = &"wizard_spin"
 frame_progress = 0.3742644
-script = ExtResource("8_ik5mf")
+script = ExtResource("7_4f6l0")
 
 [node name="AnimationPlayer3" type="AnimationPlayer" parent="Characters/wizard" unique_id=562532263]
 
@@ -349,12 +373,6 @@ scale = Vector2(4.4375, 4.2812495)
 sprite_frames = SubResource("SpriteFrames_kdb42")
 animation = &"alchemist_spin"
 frame_progress = 0.6892439
-script = ExtResource("10_4f6l0")
+script = ExtResource("9_ttd4r")
 
 [node name="AnimationPlayer4" type="AnimationPlayer" parent="Characters/alchemist" unique_id=2040934717]
-
-[node name="Concetration" type="Sprite2D" parent="." unique_id=214121612]
-texture_filter = 1
-position = Vector2(666.00006, 210.99998)
-scale = Vector2(4.5527334, 3.7986112)
-texture = ExtResource("11_4f6l0")
