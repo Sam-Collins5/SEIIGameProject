@@ -1,0 +1,360 @@
+[gd_scene format=3 uid="uid://co86c7crd35bg"]
+
+[ext_resource type="Texture2D" uid="uid://dwb5u54mi6ya6" path="res://Assets/Sprites/Scenery/shadow.png" id="1_6qiuc"]
+[ext_resource type="Script" path="res://Scenes/character_pick.gd" id="1_w8jbf"]
+[ext_resource type="Texture2D" uid="uid://bphpy6jjtmwon" path="res://Assets/Sprites/Players/Paladin/paladin_spritesheet.png" id="2_oapvl"]
+[ext_resource type="Texture2D" uid="uid://76dokqo7hc3u" path="res://Assets/Sprites/Players/Rouge/rouge_spritesheet.png" id="2_pcmfy"]
+[ext_resource type="Script" path="res://Scripts/paladin.gd" id="4_16yd5"]
+[ext_resource type="Texture2D" uid="uid://dypaimojii0w8" path="res://Assets/Sprites/Players/Wizard/wizard_spritesheet.png" id="4_w8jbf"]
+[ext_resource type="Texture2D" uid="uid://1sfihx3e3dp8" path="res://Assets/Sprites/Players/Alchemist/alchemist_spritesheet.png" id="5_16yd5"]
+[ext_resource type="Script" path="res://Scripts/rouge.gd" id="6_uulht"]
+[ext_resource type="Script" path="res://Scripts/wizard.gd" id="8_ik5mf"]
+[ext_resource type="Script" path="res://Scenes/alchemist.gd" id="10_4f6l0"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/concetration.png" id="11_4f6l0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4cfp"]
+atlas = ExtResource("2_oapvl")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ik5mf"]
+atlas = ExtResource("2_oapvl")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4f6l0"]
+atlas = ExtResource("2_oapvl")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttd4r"]
+atlas = ExtResource("2_oapvl")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivqdt"]
+atlas = ExtResource("2_oapvl")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqr0a"]
+atlas = ExtResource("2_oapvl")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iyhng"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4cfp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ik5mf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4f6l0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ttd4r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivqdt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqr0a")
+}],
+"loop": true,
+"name": &"paladin_spin",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40fru"]
+atlas = ExtResource("2_pcmfy")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cs0ny"]
+atlas = ExtResource("2_pcmfy")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oapvl"]
+atlas = ExtResource("2_pcmfy")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8jbf"]
+atlas = ExtResource("2_pcmfy")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16yd5"]
+atlas = ExtResource("2_pcmfy")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uulht"]
+atlas = ExtResource("2_pcmfy")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m4cfp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40fru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cs0ny")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oapvl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8jbf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_16yd5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uulht")
+}],
+"loop": true,
+"name": &"rouge_spin",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e12oo"]
+atlas = ExtResource("4_w8jbf")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2h1w1"]
+atlas = ExtResource("4_w8jbf")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6ip1"]
+atlas = ExtResource("4_w8jbf")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ptesl"]
+atlas = ExtResource("4_w8jbf")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2pn5e"]
+atlas = ExtResource("4_w8jbf")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcp6s"]
+atlas = ExtResource("4_w8jbf")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rtomx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e12oo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2h1w1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w6ip1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ptesl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2pn5e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xcp6s")
+}],
+"loop": true,
+"name": &"wizard_spin",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yww4p"]
+atlas = ExtResource("5_16yd5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8j52"]
+atlas = ExtResource("5_16yd5")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wb6n"]
+atlas = ExtResource("5_16yd5")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rt4ga"]
+atlas = ExtResource("5_16yd5")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5eqst"]
+atlas = ExtResource("5_16yd5")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qwdv"]
+atlas = ExtResource("5_16yd5")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kdb42"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yww4p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8j52")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5wb6n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rt4ga")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5eqst")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4qwdv")
+}],
+"loop": true,
+"name": &"alchemist_spin",
+"speed": 5.0
+}]
+
+[node name="CharacterPick" type="Node2D" unique_id=1615786409]
+script = ExtResource("1_w8jbf")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=903728516]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=611956351]
+
+[node name="ColorRect" type="ColorRect" parent="Node2D" unique_id=948944873]
+offset_left = -63.0
+offset_top = -67.0
+offset_right = 1361.0
+offset_bottom = 795.0
+color = Color(2.5438607e-05, 0.0019163229, 0.042598672, 1)
+
+[node name="LineEdit" type="LineEdit" parent="Node2D/ColorRect" unique_id=1349886177]
+modulate = Color(1, 0.84705883, 0, 1)
+texture_filter = 1
+layout_mode = 0
+offset_left = 181.0
+offset_top = 623.0
+offset_right = 304.0
+offset_bottom = 654.0
+text = "Cyber Security"
+
+[node name="LineEdit2" type="LineEdit" parent="Node2D/ColorRect" unique_id=2080998638]
+modulate = Color(1, 0.84705883, 0, 1)
+texture_filter = 1
+layout_mode = 0
+offset_left = 451.0
+offset_top = 623.0
+offset_right = 654.0
+offset_bottom = 654.0
+text = "Information  Systems"
+
+[node name="LineEdit3" type="LineEdit" parent="Node2D/ColorRect" unique_id=2021206398]
+modulate = Color(1, 0.84705883, 0, 1)
+texture_filter = 1
+layout_mode = 0
+offset_left = 755.0
+offset_top = 623.0
+offset_right = 919.0
+offset_bottom = 654.0
+text = "Computer  Science"
+
+[node name="LineEdit4" type="LineEdit" parent="Node2D/ColorRect" unique_id=2007240926]
+modulate = Color(1, 0.84705883, 0, 1)
+texture_filter = 1
+layout_mode = 0
+offset_left = 1022.0
+offset_top = 624.0
+offset_right = 1245.0
+offset_bottom = 655.0
+text = "Information  Technology"
+
+[node name="ColorRect2" type="ColorRect" parent="Node2D" unique_id=1429774010]
+offset_left = -85.0
+offset_top = 646.0
+offset_right = 1398.0
+offset_bottom = 832.0
+color = Color(0, 0, 0.14509805, 1)
+
+[node name="Pedestals" type="Node2D" parent="." unique_id=465277142]
+position = Vector2(107, 139)
+
+[node name="wizard_place" type="Sprite2D" parent="Pedestals" unique_id=1812139675]
+z_index = 2
+texture_filter = 1
+position = Vector2(78, 362)
+scale = Vector2(5.75, 3.78125)
+texture = ExtResource("1_6qiuc")
+
+[node name="rouge_place" type="Sprite2D" parent="Pedestals" unique_id=1461566891]
+z_index = 1
+texture_filter = 1
+position = Vector2(361.00003, 364)
+scale = Vector2(5.890626, 3.8593745)
+texture = ExtResource("1_6qiuc")
+
+[node name="alchemist_place" type="Sprite2D" parent="Pedestals" unique_id=1419739799]
+texture_filter = 1
+position = Vector2(664, 367)
+scale = Vector2(5.984376, 3.500001)
+texture = ExtResource("1_6qiuc")
+
+[node name="paladin_place" type="Sprite2D" parent="Pedestals" unique_id=1533133616]
+texture_filter = 1
+position = Vector2(953.00006, 365)
+scale = Vector2(5.78125, 3.125)
+texture = ExtResource("1_6qiuc")
+
+[node name="Characters" type="Node2D" parent="." unique_id=267699038]
+
+[node name="paladin" type="AnimatedSprite2D" parent="Characters" unique_id=439966609]
+z_index = 2
+texture_filter = 1
+position = Vector2(473, 460)
+scale = Vector2(3.9999995, 4.65625)
+sprite_frames = SubResource("SpriteFrames_iyhng")
+animation = &"paladin_spin"
+frame_progress = 0.4257618
+script = ExtResource("4_16yd5")
+
+[node name="AnimationPlayer1" type="AnimationPlayer" parent="Characters/paladin" unique_id=1421279185]
+
+[node name="rouge" type="AnimatedSprite2D" parent="Characters" unique_id=1105282427]
+z_index = 3
+texture_filter = 1
+position = Vector2(182.99997, 476)
+scale = Vector2(3.9843748, 4.21875)
+sprite_frames = SubResource("SpriteFrames_m4cfp")
+animation = &"rouge_spin"
+frame_progress = 0.19224659
+script = ExtResource("6_uulht")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Characters/rouge" unique_id=723844283]
+root_node = NodePath("../../paladin")
+
+[node name="wizard" type="AnimatedSprite2D" parent="Characters" unique_id=1689221033]
+z_index = 1
+texture_filter = 1
+position = Vector2(770, 495)
+scale = Vector2(5.046875, 4.5781245)
+sprite_frames = SubResource("SpriteFrames_rtomx")
+animation = &"wizard_spin"
+frame_progress = 0.3742644
+script = ExtResource("8_ik5mf")
+
+[node name="AnimationPlayer3" type="AnimationPlayer" parent="Characters/wizard" unique_id=562532263]
+
+[node name="alchemist" type="AnimatedSprite2D" parent="Characters" unique_id=1090003921]
+z_index = 1
+texture_filter = 1
+position = Vector2(1050, 482)
+scale = Vector2(4.4375, 4.2812495)
+sprite_frames = SubResource("SpriteFrames_kdb42")
+animation = &"alchemist_spin"
+frame_progress = 0.6892439
+script = ExtResource("10_4f6l0")
+
+[node name="AnimationPlayer4" type="AnimationPlayer" parent="Characters/alchemist" unique_id=2040934717]
+
+[node name="Concetration" type="Sprite2D" parent="." unique_id=214121612]
+texture_filter = 1
+position = Vector2(666.00006, 210.99998)
+scale = Vector2(4.5527334, 3.7986112)
+texture = ExtResource("11_4f6l0")
