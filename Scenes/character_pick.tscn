@@ -4,12 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://d2rmdw5nae3bc" path="res://Assets/Sprites/UI/concentration.png" id="1_ik5mf"]
 [ext_resource type="Texture2D" uid="uid://bphpy6jjtmwon" path="res://Assets/Sprites/Players/Paladin/paladin_spritesheet.png" id="2_oapvl"]
 [ext_resource type="Texture2D" uid="uid://76dokqo7hc3u" path="res://Assets/Sprites/Players/Rouge/rouge_spritesheet.png" id="2_pcmfy"]
-[ext_resource type="Script" uid="uid://cn4pe7ts842ej" path="res://Scripts/Character_Pick/paladin_spin.gd" id="3_m4cfp"]
+[ext_resource type="Script" uid="uid://c2apnuak0ip1n" path="res://Scripts/Character_Picker/paladin_spin.gd" id="4_ik5mf"]
 [ext_resource type="Texture2D" uid="uid://dypaimojii0w8" path="res://Assets/Sprites/Players/Wizard/wizard_spritesheet.png" id="4_w8jbf"]
 [ext_resource type="Texture2D" uid="uid://1sfihx3e3dp8" path="res://Assets/Sprites/Players/Alchemist/alchemist_spritesheet.png" id="5_16yd5"]
-[ext_resource type="Script" uid="uid://c52injvy0njey" path="res://Scripts/Character_Pick/rouge_spin.gd" id="5_ik5mf"]
-[ext_resource type="Script" uid="uid://c3pa1fnxdn2dn" path="res://Scripts/Character_Pick/wizard_spin.gd" id="7_4f6l0"]
-[ext_resource type="Script" uid="uid://cnwefjyv1hddb" path="res://Scripts/Character_Pick/alchemist_spin.gd" id="9_ttd4r"]
+[ext_resource type="Script" uid="uid://d31h73qioqraq" path="res://Scripts/Character_Picker/rouge_spin.gd" id="5_uulht"]
+[ext_resource type="Script" uid="uid://cwaxe8j8evp6b" path="res://Scripts/Character_Picker/wizard_spin.gd" id="7_uulht"]
+[ext_resource type="Script" uid="uid://dnwdjy8l6po3n" path="res://Scripts/Character_Picker/alchemist_spin.gd" id="9_m4cfp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m4cfp"]
 atlas = ExtResource("2_oapvl")
@@ -336,7 +336,7 @@ scale = Vector2(3.9999995, 4.65625)
 sprite_frames = SubResource("SpriteFrames_iyhng")
 animation = &"paladin_spin"
 frame_progress = 0.4257618
-script = ExtResource("3_m4cfp")
+script = ExtResource("4_ik5mf")
 
 [node name="AnimationPlayer1" type="AnimationPlayer" parent="Characters/paladin" unique_id=1421279185]
 
@@ -348,7 +348,7 @@ scale = Vector2(3.9843748, 4.21875)
 sprite_frames = SubResource("SpriteFrames_m4cfp")
 animation = &"rouge_spin"
 frame_progress = 0.19224659
-script = ExtResource("5_ik5mf")
+script = ExtResource("5_uulht")
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="Characters/rouge" unique_id=723844283]
 root_node = NodePath("../../paladin")
@@ -361,7 +361,7 @@ scale = Vector2(5.046875, 4.5781245)
 sprite_frames = SubResource("SpriteFrames_rtomx")
 animation = &"wizard_spin"
 frame_progress = 0.3742644
-script = ExtResource("7_4f6l0")
+script = ExtResource("7_uulht")
 
 [node name="AnimationPlayer3" type="AnimationPlayer" parent="Characters/wizard" unique_id=562532263]
 
@@ -373,6 +373,6 @@ scale = Vector2(4.4375, 4.2812495)
 sprite_frames = SubResource("SpriteFrames_kdb42")
 animation = &"alchemist_spin"
 frame_progress = 0.6892439
-script = ExtResource("9_ttd4r")
+script = ExtResource("9_m4cfp")
 
 [node name="AnimationPlayer4" type="AnimationPlayer" parent="Characters/alchemist" unique_id=2040934717]
