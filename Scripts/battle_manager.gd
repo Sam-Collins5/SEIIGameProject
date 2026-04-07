@@ -121,8 +121,8 @@ func _ready() -> void:
 	question_data.append(2)
 	set_question(question_data)
 
-
-# TODO: Take in enemy data
+# New funck needed to take in door data, to know which scene to show for the battle
+# TODO: Take in enemy data  -- Riley 03/31/26 starts on this
 func start_battle() -> void:
 	battle_ui.visible = true
 	battle_gfx.visible = true

@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cybr7f66snyup"]
+
+[ext_resource type="Script" uid="uid://dbw7pjqhfsg2q" path="res://Scripts/battle_player.gd" id="1_jn0tl"]
+[ext_resource type="Texture2D" uid="uid://2ajp06r5h7d" path="res://Assets/Sprites/Players/Rouge/rouge_idle.png" id="2_lf2jm"]
+[ext_resource type="Script" uid="uid://ymbpb8q54tc6" path="res://Scripts/enemy.gd" id="3_boyx8"]
+[ext_resource type="Texture2D" uid="uid://dsh86kcho8ace" path="res://Assets/Sprites/Bosses/Chandler/chandler_idle.png" id="4_jn0tl"]
+[ext_resource type="Texture2D" uid="uid://cdf1nw4ajbvv3" path="res://Assets/Sprites/Scenery/arena.png" id="5_jfjbo"]
+
+[node name="Battle_GFX" type="Node2D" unique_id=531540765]
+
+[node name="Battle_Player" type="Node2D" parent="." unique_id=914930256]
+unique_name_in_owner = true
+script = ExtResource("1_jn0tl")
+
+[node name="Player" type="Sprite2D" parent="Battle_Player" unique_id=631013640]
+texture_filter = 1
+position = Vector2(-435.99997, 43)
+scale = Vector2(7.3124986, 7.6484375)
+texture = ExtResource("2_lf2jm")
+
+[node name="Enemy" type="Node2D" parent="." unique_id=1334808925]
+unique_name_in_owner = true
+script = ExtResource("3_boyx8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy" unique_id=804069170]
+texture_filter = 1
+position = Vector2(285.16235, -208.96053)
+scale = Vector2(4.8567524, 4.4007897)
+texture = ExtResource("4_jn0tl")
+
+[node name="Battle_Scene" type="Node2D" parent="." unique_id=1642985067]
+
+[node name="Sprite2D" type="Sprite2D" parent="Battle_Scene" unique_id=949238378]
+visible = false
+z_index = -1
+position = Vector2(16, -63)
+scale = Vector2(6.015137, 5.784723)
+texture = ExtResource("5_jfjbo")
