@@ -11,9 +11,9 @@ var battleManager: Node2D
 var overworldPlayer: Node2D
 var battlePlayer: Node2D
 
-var mainMenuStartButton: Button
-var mainMenuOptionsButton: Button
-var mainMenuExitButton: Button
+var mainMenuStartButton: TextureButton
+var mainMenuOptionsButton: TextureButton
+var mainMenuExitButton: TextureButton
 
 var pauseMenu: Control
 

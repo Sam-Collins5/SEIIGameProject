@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bofp34dncoilp"]
+[gd_scene load_steps=15 format=3 uid="uid://bofp34dncoilp"]
 
 [ext_resource type="Script" uid="uid://dhwcyr8mwo5x5" path="res://Scripts/main_menu.gd" id="1_28flt"]
 [ext_resource type="PackedScene" uid="uid://827re7d2w0an" path="res://Scenes/game_manager.tscn" id="2_n45e2"]
@@ -6,10 +6,17 @@
 [ext_resource type="PackedScene" uid="uid://d1bt167m2ju2e" path="res://Scenes/battle_ui.tscn" id="4_cp0ys"]
 [ext_resource type="PackedScene" uid="uid://c7ni0qflm182p" path="res://Scenes/battle_gfx.tscn" id="5_yhxw7"]
 [ext_resource type="PackedScene" uid="uid://cnr6eq1yf1k0o" path="res://Scenes/settings.tscn" id="6_opfnp"]
+[ext_resource type="Texture2D" uid="uid://d145frl8v3myk" path="res://Assets/Sprites/UI/Buttons/start_idle.png" id="7_cp0ys"]
+[ext_resource type="Texture2D" uid="uid://d2qvdegfxuyue" path="res://Assets/Sprites/UI/Buttons/start_pressed.png" id="8_t1dhk"]
+[ext_resource type="Texture2D" uid="uid://bdo525x5wxtjw" path="res://Assets/Sprites/UI/Buttons/start_hovered.png" id="9_5egv6"]
+[ext_resource type="Texture2D" uid="uid://cpxb7od7t5n7w" path="res://Assets/Sprites/UI/Buttons/options_idle.png" id="10_vtepg"]
+[ext_resource type="Texture2D" uid="uid://ckpjr7jedvhpk" path="res://Assets/Sprites/UI/Buttons/options_pressed.png" id="11_8dnnj"]
+[ext_resource type="Texture2D" uid="uid://dk2jq86g58agy" path="res://Assets/Sprites/UI/Buttons/options_hovered.png" id="12_m3bi6"]
+[ext_resource type="Texture2D" uid="uid://fpuov5ptu0ec" path="res://Assets/Sprites/UI/Buttons/end_game.png" id="13_5egv6"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_opfnp"]
 
-[node name="MainMenu" type="Control" unique_id=1247731053]
+[node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -20,68 +27,69 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_28flt")
 
-[node name="GameManager" parent="." unique_id=1626966012 instance=ExtResource("2_n45e2")]
+[node name="GameManager" parent="." instance=ExtResource("2_n45e2")]
 unique_name_in_owner = true
 
-[node name="BattleManager" parent="." unique_id=1538357254 instance=ExtResource("3_opfnp")]
+[node name="BattleManager" parent="." instance=ExtResource("3_opfnp")]
 unique_name_in_owner = true
 
-[node name="BattleUI" parent="." unique_id=1546178966 instance=ExtResource("4_cp0ys")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
-
-[node name="Battle_GFX" parent="." unique_id=483790056 instance=ExtResource("5_yhxw7")]
-unique_name_in_owner = true
-visible = false
-
-[node name="Settings" parent="." unique_id=1980910498 instance=ExtResource("6_opfnp")]
+[node name="BattleUI" parent="." instance=ExtResource("4_cp0ys")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=719326595]
+[node name="Battle_GFX" parent="." instance=ExtResource("5_yhxw7")]
+unique_name_in_owner = true
+visible = false
 
-[node name="MainMenuButtons" type="VBoxContainer" parent="Camera2D" unique_id=121836622]
+[node name="Settings" parent="." instance=ExtResource("6_opfnp")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="MainMenuButtons" type="VBoxContainer" parent="Camera2D"]
 unique_name_in_owner = true
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -273.25
-offset_top = -182.625
-offset_right = 273.25
-offset_bottom = 182.625
+offset_left = -189.5
+offset_top = -247.75
+offset_right = 189.5
+offset_bottom = 247.75
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 8
+theme_override_constants/separation = 0
 
-[node name="Start Game" type="Button" parent="Camera2D/MainMenuButtons" unique_id=1113791968]
+[node name="Start Game" type="TextureButton" parent="Camera2D/MainMenuButtons"]
+texture_filter = 1
 material = SubResource("CanvasItemMaterial_opfnp")
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 34
-text = "Start Game"
+texture_normal = ExtResource("7_cp0ys")
+texture_pressed = ExtResource("8_t1dhk")
+texture_hover = ExtResource("9_5egv6")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="TextureRect" type="TextureRect" parent="Camera2D/MainMenuButtons/Start Game" unique_id=1472752900]
-layout_mode = 0
-offset_left = -236.75
-offset_top = -121.375
-offset_right = 786.25
-offset_bottom = 152.625
-
-[node name="Options" type="Button" parent="Camera2D/MainMenuButtons" unique_id=18141335]
+[node name="Options" type="TextureButton" parent="Camera2D/MainMenuButtons"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 34
-text = "Options"
+texture_normal = ExtResource("10_vtepg")
+texture_pressed = ExtResource("11_8dnnj")
+texture_hover = ExtResource("12_m3bi6")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="Exit Game" type="Button" parent="Camera2D/MainMenuButtons" unique_id=854470896]
+[node name="Exit Game" type="TextureButton" parent="Camera2D/MainMenuButtons"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 34
-text = "Exit Game"
+texture_normal = ExtResource("13_5egv6")
+ignore_texture_size = true
+stretch_mode = 0
 
 [connection signal="pressed" from="Camera2D/MainMenuButtons/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Camera2D/MainMenuButtons/Exit Game" to="." method="_on_exit_game_pressed"]
