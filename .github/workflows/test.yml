@@ -16,7 +16,6 @@ jobs:
         run: |
           wget -q https://github.com/godotengine/godot/releases/download/4.5.1-stable/Godot_v4.5.1-stable_mono_linux_x86_64.zip
           unzip -q Godot_v4.5.1-stable_mono_linux_x86_64.zip
-          chmod +x Godot_v4.5.1-stable_mono_linux_x86_64/Godot_v4.5.1-stable_mono_linux_x86_64
-
+          ls -R Godot_v4.5.1-stable_mono_linux_x86_64/
       - name: Run tests
         run: ./Godot_v4.5.1-stable_mono_linux_x86_64/Godot_v4.5.1-stable_mono_linux_x86_64 --headless --script Scripts/Testing/gametest.gd
