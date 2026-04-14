@@ -125,7 +125,7 @@ class AddQuestionTab(QWidget):
     def submit_question(self):
         global fileSaved
         question = Question()
-        question.Type = self.typeEdit.toPlainText()
+        question.Type = self.typeEdit.toPlainText().upper()
 
         question.Text = self.questionEdit.toPlainText()
 
@@ -173,7 +173,7 @@ class ViewQuestionsTab(QWidget):
 
         self.mainLayout.addWidget(self.scroll)
         self.setLayout(self.mainLayout)
-    
+
 
     def refresh(self):
         content = ""
@@ -188,6 +188,7 @@ class ViewQuestionsTab(QWidget):
             content += f"ChoiceD:\t{question.ChoiceD}\n"
             content += "----------\n"
         self.textLabel.setText(content)
+        self.scroll.resize(self.textLabel.size().width(), self.textLabel.size().height())
 
 
 class SaveQuestionsTab(QWidget):
@@ -291,6 +292,7 @@ def save_questions(filepath: str) -> bool:
 
 def read_questions(filepath: str):
     global questions
+    questions.clear()
     file = open(filepath)
     lines = file.readlines()
     for i, l in enumerate(lines):
@@ -326,7 +328,7 @@ def main():
     global viewQuestionsTab
     global saveQuestionsTab
     questions = dict()
-    filePath = "Questions.txt"
+    filePath = "../../Questions.txt"
 
     app = QApplication(sys.argv)
 
