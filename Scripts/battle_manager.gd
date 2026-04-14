@@ -1,6 +1,10 @@
 class_name BattleManager
 extends Node2D
 
+var qi: QuestionImporter
+var question_index_queue: Array
+var question_current_index: int
+
 enum Battle_Turn {Player_Turn, Enemy_Turn}
 var turn: Battle_Turn
 
@@ -112,14 +116,12 @@ func _ready() -> void:
 	question_timer.timeout.connect(_on_question_timer_end)
 	enemy_timer.timeout.connect(_on_enemy_timer_end)
 	
-	var question_data: Array
-	question_data.append("Why are tests especially important in AI-assisted development?")
-	question_data.append("AI is sick and cool and we should use it in everything obviously")
-	question_data.append("Generated code may be incorrect for your use case")
-	question_data.append("AI replaces developers")
-	question_data.append("AI debugs itself and doesn’t have errors")
-	question_data.append(2)
-	set_question(question_data)
+	qi = get_node("%Question_Importer")
+	qi.read_questions()
+	for k in qi.questions.keys():
+		question_index_queue.append(k)
+	question_current_index = 0
+
 
 # New funck needed to take in door data, to know which scene to show for the battle
 # TODO: Take in enemy data  -- Riley 03/31/26 starts on this
@@ -135,6 +137,9 @@ func start_battle() -> void:
 	var overworld_gfx = get_node("%Overworld_GFX")
 	if overworld_gfx:
 		overworld_gfx.visible = false
+	
+	question_index_queue.shuffle()
+	question_current_index = 0
 
 
 func end_battle() -> void:
@@ -149,28 +154,28 @@ func end_battle() -> void:
 
 
 func _on_button1_pressed() -> void:
-	if answer_index == 1:
+	if answer_index == 0:
 		_on_correct_answer()
 		return
 	_on_wrong_answer()
 
 
 func _on_button2_pressed() -> void:
-	if answer_index == 2:
+	if answer_index == 1:
 		_on_correct_answer()
 		return
 	_on_wrong_answer()
 
 
 func _on_button3_pressed() -> void:
-	if answer_index == 3:
+	if answer_index == 2:
 		_on_correct_answer()
 		return
 	_on_wrong_answer()
 
 
 func _on_button4_pressed() -> void:
-	if answer_index == 4:
+	if answer_index == 3:
 		_on_correct_answer()
 		return
 	_on_wrong_answer()
@@ -183,16 +188,21 @@ func enable_buttons(enable: bool) -> void:
 	button4.disabled = !enable
 
 
-func set_question(question_data: Array) -> void:
-	if question_data.size() != 6:
-		push_error("Question data array has incorrect size!")
-		return
-	question_label.text = question_data[0]
-	button1_label.text = question_data[1]
-	button2_label.text = question_data[2]
-	button3_label.text = question_data[3]
-	button4_label.text = question_data[4]
-	answer_index = question_data[5]
+func set_question(question: Question) -> void:
+	var choices = Array()
+	choices = [ question.ChoiceA, question.ChoiceB, question.ChoiceC, question.ChoiceD ]
+	choices.shuffle()
+	
+	for i in choices.size():
+		var choice = choices[i]
+		if choice == question.ChoiceA:
+			answer_index = i
+	
+	question_label.text = question.Text
+	button1_label.text = choices[0]
+	button2_label.text = choices[1]
+	button3_label.text = choices[2]
+	button4_label.text = choices[3]
 	enable_buttons(true)
 
 
@@ -292,6 +302,14 @@ func _on_defend_timer_end() -> void:
 
 ### Question ###
 func _on_question_pressed() -> void:
+	var index = randi_range(0, len(qi.questions)-1)
+	var i = 0
+	for k in qi.questions.keys():
+		if i == index:
+			set_question(qi.questions[question_index_queue[question_current_index]])
+			question_current_index += 1
+		i += 1
+	
 	battle_buttons.visible = false
 	question_ui.visible = true
 	enable_buttons(true)

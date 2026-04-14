@@ -1,16 +1,128 @@
-1
-The answer is A.
-A
-B
-C
-D
-A
+4028015336
+ALL
+Which of the following is volatile memory?
+Hard drive
+SSD
+RAM
+ROM
 ----
-2
-The answer is B.
-A
-B
-C
-D
-B
+1584619935
+ALL
+What is the primary purpose of an operating system?
+Manage hardware and software resources
+Run antivirus software
+Compile programs
+Store files permanently
+----
+1456111635
+ALL
+Which data structure works on a Last In, First Out (LIFO) principle?
+Queue
+Tree
+Array
+Stack
+----
+1695894560
+ALL
+What is a variable?
+A container for storing data
+A fixed value
+A loop condition
+A type of function
+----
+3340082977
+ALL
+What does CIA stand for in the CIA Triad?
+Confidentiality, Integrity, Availability
+Control, Integrity, Access
+Cyber, Internet, Access
+Code, Input, Algorithm
+----
+1017314261
+ALL
+What is malware?
+Malicious software
+Legitimate system software
+Hardware failure
+Network protocol
+----
+1896849066
+ALL
+Which type of malware disguises itself as legitimate software?
+Trojan
+Worm
+Virus
+Spyware
+----
+3957744229
+ALL
+What does IP stand for?
+Internet Protocol
+Internet Process
+Internal Program
+Information Packet
+----
+3130305090
+ALL
+Which device connects multiple computers within a local network?
+Router
+Modem
+Switch
+Firewall
+----
+3745849506
+ALL
+What does WAN stand for?
+Wide Area Network
+Wireless Access Network
+Web Area Network
+World Access Node
+----
+2031531626
+ALL
+Which of the following is a valid MAC address?
+FF:EE:DD:CC:BB:AA
+192.168.1.1
+256.0.0.1
+127.0.0.1
+----
+1443187401
+ALL
+What is the primary role of the BIOS in a computer system?
+Initialize hardware and start the operating system
+Manage network connections
+Store user files
+Run application software
+----
+3212031055
+ALL
+Which command lists files in a directory on Linux?
+ls
+get
+dir
+show
+----
+4100325182
+ALL
+What is the kernel?
+The core component of the operating system
+A user application
+The graphical interface of the OS
+A device driver
+----
+3397236850
+ALL
+Why is kernel space protected from user programs?
+To prevent system crashes and security issues
+For better graphics 
+To improve internet speed
+To store passwords
+----
+629358421
+ALL
+Which of the following is an example of a system call?
+Opening a file
+Clicking a mouse
+Writing code
+Displaying graphics
 ----

@@ -1,35 +1,40 @@
-[gd_scene format=3 uid="uid://dx82ngo7ob8ci"]
+[gd_scene load_steps=3 format=3 uid="uid://dx82ngo7ob8ci"]
 
 [ext_resource type="Script" uid="uid://ce6t7mb0r5sta" path="res://Scripts/battle_manager.gd" id="1_r0ul7"]
+[ext_resource type="Script" uid="uid://6t5ddhu2huul" path="res://Scripts/Questions/question_importer.gd" id="2_58ulb"]
 
-[node name="BattleManager" type="Node2D" unique_id=1697508108]
+[node name="BattleManager" type="Node2D"]
 script = ExtResource("1_r0ul7")
 
-[node name="BattleUI_Anim_Timer" type="Timer" parent="." unique_id=1144693027]
+[node name="Question_Importer" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_58ulb")
+
+[node name="BattleUI_Anim_Timer" type="Timer" parent="."]
 unique_name_in_owner = true
 wait_time = 1.2
 one_shot = true
 ignore_time_scale = true
 
-[node name="Attack_Timer" type="Timer" parent="." unique_id=1900859453]
+[node name="Attack_Timer" type="Timer" parent="."]
 unique_name_in_owner = true
 wait_time = 2.0
 one_shot = true
 ignore_time_scale = true
 
-[node name="Defend_Timer" type="Timer" parent="." unique_id=511670481]
+[node name="Defend_Timer" type="Timer" parent="."]
 unique_name_in_owner = true
 wait_time = 2.0
 one_shot = true
 ignore_time_scale = true
 
-[node name="Question_Timer" type="Timer" parent="." unique_id=2021458826]
+[node name="Question_Timer" type="Timer" parent="."]
 unique_name_in_owner = true
 wait_time = 2.0
 one_shot = true
 ignore_time_scale = true
 
-[node name="Enemy_Timer" type="Timer" parent="." unique_id=333250458]
+[node name="Enemy_Timer" type="Timer" parent="."]
 unique_name_in_owner = true
 wait_time = 2.0
 one_shot = true
