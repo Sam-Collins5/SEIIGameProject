@@ -33,6 +33,7 @@ func _initialize() -> void:
 func test_battle() -> void:
 	take_damage_test()
 	question_damage_test()
+	deal_damage_test()
 	if errors.is_empty():
 		print("Tests passed!")
 		quit(0)
@@ -65,6 +66,20 @@ func question_damage_test() -> void:
 	if battle.enemy.health_points < 0:
 		battle.enemy.health_points = 0
 	assert_equal(battle.enemy.health_points, 3, "Player turn: player answering question should decrease enemy HP by (attack_power*questeion_modifier)", "Question Damage test successful!")
+	
+	battle.player.free()
+	battle.enemy.free()
+	battle.free()
+
+func deal_damage_test() -> void:
+	var battle = BATTLE_MANAGER.new()
+	battle.player = test_player(20, 3, 3.0)
+	battle.enemy = test_enemy(12, 2)
+	
+	battle.enemy.health_points -= battle.player.attack_power
+	if battle.enemy.health_points < 0:
+		battle.enemy.health_points = 0
+	assert_equal(battle.enemy.health_points, 9, "Playr turn: player attacking enemy should decrease enemy HP by attack_powe", "Deal Damage test successful!")
 	
 	battle.player.free()
 	battle.enemy.free()
