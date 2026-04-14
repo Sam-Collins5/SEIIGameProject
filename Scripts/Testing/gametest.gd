@@ -10,11 +10,10 @@ func assert_equal(actual, expected, message: String) -> void:
 	if actual != expected:
 		errors.append("%s Expected %s, got %s." % [message, str(expected), str(actual)])
 
-func test_player(health: int, attack: int, defense: int, question: float) -> Node2D:
+func test_player(health: int, attack: int, question: float) -> Node2D:
 	var player := BATTLE_PLAYER.new()
 	player.set("health_points", health)
 	player.set("attack_power", attack)
-	player.set("defense_power", defense)
 	player.set("question_modifier", question)
 	return player
 
@@ -30,6 +29,7 @@ func _initialize() -> void:
 
 func test_battle() -> void:
 	take_damage_test()
+	question_damage_test()
 	if errors.is_empty():
 		print("Tests passed!")
 		quit(0)
@@ -41,13 +41,27 @@ func test_battle() -> void:
 
 func take_damage_test() -> void:
 	var battle = BATTLE_MANAGER.new()
-	battle.player = test_player(20, 3, 2, 3.0)
+	battle.player = test_player(20, 3, 3.0)
 	battle.enemy = test_enemy(12, 2)
 	
 	battle.player.health_points -= battle.enemy.attack_power
 	if battle.player.health_points < 0:
 		battle.player.health_points = 0
 	assert_equal(battle.player.health_points, 18, "Enemy turn: player HP should decrease by enemy attack_power")
+	
+	battle.player.free()
+	battle.enemy.free()
+	battle.free()
+
+func question_damage_test() -> void:
+	var battle = BATTLE_MANAGER.new()
+	battle.player = test_player(20, 3, 3.0)
+	battle.enemy = test_enemy(12, 2)
+	
+	battle.enemy.health_points -= battle.player.attack_power * battle.player.question_modifier
+	if battle.enemy.health_points < 0:
+		battle.enemy.health_points = 0
+	assert_equal(battle.enemy.health_points, 3, "Player turn: player answering question should decrease enemy HP by (attack_power*questeion_modifier)")
 	
 	battle.player.free()
 	battle.enemy.free()
