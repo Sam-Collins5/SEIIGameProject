@@ -1,9 +1,9 @@
 4028015336
 ALL
 Which of the following is volatile memory?
+RAM
 Hard drive
 SSD
-RAM
 ROM
 ----
 1584619935
