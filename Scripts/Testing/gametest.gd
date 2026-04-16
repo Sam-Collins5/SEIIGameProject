@@ -95,7 +95,6 @@ func healing_potion_test() -> void:
 	battle.enemy = test_enemy(12, 2)
 	
 	print(battle.player.health_points)
-	items._on_health_pressed()
 	print(battle.player.health_points)
 	
 	battle.player.free()
