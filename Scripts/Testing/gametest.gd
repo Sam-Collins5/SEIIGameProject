@@ -36,7 +36,6 @@ func test_battle() -> void:
 	take_damage_test()
 	question_damage_test()
 	deal_damage_test()
-	healing_potion_test()
 	if errors.is_empty():
 		print("Tests passed!")
 		quit(0)
@@ -87,17 +86,3 @@ func deal_damage_test() -> void:
 	battle.player.free()
 	battle.enemy.free()
 	battle.free()
-
-func healing_potion_test() -> void:
-	var battle = BATTLE_MANAGER.new()
-	var items = BATTLE_ITEMS.new()
-	battle.player = test_player(20, 3, 3.0)
-	battle.enemy = test_enemy(12, 2)
-	
-	print(battle.player.health_points)
-	print(battle.player.health_points)
-	
-	battle.player.free()
-	battle.enemy.free()
-	battle.free()
-	
