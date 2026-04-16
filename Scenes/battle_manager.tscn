@@ -1,10 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://dx82ngo7ob8ci"]
+[gd_scene load_steps=4 format=3 uid="uid://dx82ngo7ob8ci"]
 
 [ext_resource type="Script" uid="uid://ce6t7mb0r5sta" path="res://Scripts/battle_manager.gd" id="1_r0ul7"]
 [ext_resource type="Script" uid="uid://6t5ddhu2huul" path="res://Scripts/Questions/question_importer.gd" id="2_58ulb"]
+[ext_resource type="Script" uid="uid://b1pouwuyd2bmv" path="res://Scripts/battle_items_manager.gd" id="2_pjdjj"]
 
 [node name="BattleManager" type="Node2D"]
 script = ExtResource("1_r0ul7")
+
+[node name="Item_Manager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_pjdjj")
+
+[node name="Popup_Timer" type="Timer" parent="Item_Manager"]
+unique_name_in_owner = true
+wait_time = 2.0
+one_shot = true
+ignore_time_scale = true
 
 [node name="Question_Importer" type="Node" parent="."]
 unique_name_in_owner = true
@@ -17,12 +28,6 @@ one_shot = true
 ignore_time_scale = true
 
 [node name="Attack_Timer" type="Timer" parent="."]
-unique_name_in_owner = true
-wait_time = 2.0
-one_shot = true
-ignore_time_scale = true
-
-[node name="Defend_Timer" type="Timer" parent="."]
 unique_name_in_owner = true
 wait_time = 2.0
 one_shot = true
