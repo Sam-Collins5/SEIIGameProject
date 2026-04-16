@@ -56,7 +56,6 @@ func switch_to_overworld() -> void:
 	# If coming from title screen,
 	#  switch to an overworld scene
 	if game_state == GameState.TITLE_SCREEN:
-		print("wowee")
 		get_tree().change_scene_to_file("res://Scenes/player.tscn")
 	# If coming from battle, disable battle graphics
 	elif game_state == GameState.BATTLE:
