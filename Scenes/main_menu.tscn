@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bofp34dncoilp"]
+[gd_scene load_steps=20 format=3 uid="uid://bofp34dncoilp"]
 
 [ext_resource type="Script" uid="uid://dhwcyr8mwo5x5" path="res://Scripts/main_menu.gd" id="1_28flt"]
 [ext_resource type="PackedScene" uid="uid://827re7d2w0an" path="res://Scenes/game_manager.tscn" id="2_n45e2"]
@@ -13,6 +13,11 @@
 [ext_resource type="Texture2D" uid="uid://ckpjr7jedvhpk" path="res://Assets/Sprites/UI/Buttons/options_pressed.png" id="11_8dnnj"]
 [ext_resource type="Texture2D" uid="uid://dk2jq86g58agy" path="res://Assets/Sprites/UI/Buttons/options_hovered.png" id="12_m3bi6"]
 [ext_resource type="Texture2D" uid="uid://fpuov5ptu0ec" path="res://Assets/Sprites/UI/Buttons/end_game.png" id="13_5egv6"]
+[ext_resource type="Texture2D" uid="uid://cdup5glkabar3" path="res://Assets/Sprites/UI/main_menu_static.png" id="14_ujyyl"]
+[ext_resource type="Texture2D" uid="uid://76dokqo7hc3u" path="res://Assets/Sprites/Players/Rouge/rouge_spritesheet.png" id="15_ujyyl"]
+[ext_resource type="Texture2D" uid="uid://bphpy6jjtmwon" path="res://Assets/Sprites/Players/Paladin/paladin_spritesheet.png" id="16_mkpwh"]
+[ext_resource type="Texture2D" uid="uid://dypaimojii0w8" path="res://Assets/Sprites/Players/Wizard/wizard_spritesheet.png" id="17_4nkqq"]
+[ext_resource type="Texture2D" uid="uid://1sfihx3e3dp8" path="res://Assets/Sprites/Players/Alchemist/alchemist_spritesheet.png" id="18_ehtkc"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_opfnp"]
 
@@ -49,22 +54,33 @@ layout_mode = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
+[node name="TextureRect" type="TextureRect" parent="Camera2D"]
+z_index = -1
+texture_filter = 1
+offset_left = -642.0
+offset_top = -361.0
+offset_right = 639.0
+offset_bottom = 359.0
+texture = ExtResource("14_ujyyl")
+
 [node name="MainMenuButtons" type="VBoxContainer" parent="Camera2D"]
 unique_name_in_owner = true
+z_index = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -189.5
-offset_top = -247.75
-offset_right = 189.5
-offset_bottom = 247.75
+offset_left = 380.0
+offset_top = 45.0
+offset_right = 624.5
+offset_bottom = 312.75
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 0
 
 [node name="Start Game" type="TextureButton" parent="Camera2D/MainMenuButtons"]
+z_index = 1
 texture_filter = 1
 material = SubResource("CanvasItemMaterial_opfnp")
 layout_mode = 2
@@ -76,6 +92,7 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="Options" type="TextureButton" parent="Camera2D/MainMenuButtons"]
+z_index = 1
 layout_mode = 2
 size_flags_vertical = 3
 texture_normal = ExtResource("10_vtepg")
@@ -85,11 +102,44 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="Exit Game" type="TextureButton" parent="Camera2D/MainMenuButtons"]
+z_index = 1
 layout_mode = 2
 size_flags_vertical = 3
 texture_normal = ExtResource("13_5egv6")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D"]
+texture_filter = 1
+position = Vector2(118.00003, 229)
+scale = Vector2(4.9094844, 5.185483)
+texture = ExtResource("15_ujyyl")
+region_enabled = true
+region_rect = Rect2(0, 0.29564285, 29.630524, 31.704357)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Camera2D"]
+texture_filter = 1
+position = Vector2(-175.00002, 258)
+scale = Vector2(4.9734836, 4.8125)
+texture = ExtResource("16_mkpwh")
+region_enabled = true
+region_rect = Rect2(158.51877, 0, 33.63359, 32)
+
+[node name="Sprite2D3" type="Sprite2D" parent="Camera2D"]
+texture_filter = 1
+position = Vector2(225, 196)
+scale = Vector2(5.184523, 4.826923)
+texture = ExtResource("17_4nkqq")
+region_enabled = true
+region_rect = Rect2(164.25627, 0, 21.762894, 26.97993)
+
+[node name="Sprite2D4" type="Sprite2D" parent="Camera2D"]
+texture_filter = 1
+position = Vector2(-22.99999, 250.99998)
+scale = Vector2(5.3534484, 5.0625)
+texture = ExtResource("18_ehtkc")
+region_enabled = true
+region_rect = Rect2(161.68428, 0, 29.281006, 32)
 
 [connection signal="pressed" from="Camera2D/MainMenuButtons/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Camera2D/MainMenuButtons/Exit Game" to="." method="_on_exit_game_pressed"]
