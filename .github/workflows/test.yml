@@ -11,7 +11,7 @@ jobs:
       - name: Download Godot
         run: |
           curl -L -o godot.zip https://github.com/godotengine/godot/releases/download/4.5.1-stable/Godot_v4.5.1-stable_mono_win64.zip
-          Expand-Archive -Path godot.zip -DestinationPath .
+          Expand-Archive -Path godot.zip -DestinationPath godot_temp
           Get-ChildItem -Recurse godot_temp
       - name: Import project
         run: ./Godot_v4.5.1-stable_mono_win64/Godot_v4.5.1-stable_mono_win64.exe --path . --headless --import
