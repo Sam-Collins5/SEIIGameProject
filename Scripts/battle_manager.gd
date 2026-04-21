@@ -1,13 +1,13 @@
 class_name BattleManager
 extends Node2D
 
-var qi: QuestionImporter
-var current_question: Question
+var qi: Node
+var current_question: Object
 var current_choices: Array
 var question_index_queue: Array
 var question_current_index: int
 
-var item_manager: BattleItemsManager
+var item_manager: Node
 
 enum Battle_Turn {Player_Turn, Enemy_Turn}
 var turn: Battle_Turn
@@ -17,8 +17,8 @@ var homework_turns: int
 
 var enemy_defeated: bool
 
-var player: BattlePlayer
-var enemy: Enemy
+var player: Node2D
+var enemy: Node2D
 
 var battle_ui: Control
 var battle_gfx: Node2D
