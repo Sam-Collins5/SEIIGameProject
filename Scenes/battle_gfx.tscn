@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c7ni0qflm182p"]
+[gd_scene load_steps=6 format=3 uid="uid://c7ni0qflm182p"]
 
 [ext_resource type="Script" uid="uid://dbw7pjqhfsg2q" path="res://Scripts/battle_player.gd" id="1_kt4s3"]
 [ext_resource type="Texture2D" uid="uid://2ajp06r5h7d" path="res://Assets/Sprites/Players/Rouge/rouge_idle.png" id="2_llxbv"]
@@ -6,31 +6,31 @@
 [ext_resource type="Texture2D" uid="uid://bv2j6s4l3mn0f" path="res://Assets/Sprites/Bosses/Tarnoff/tarnoff_idle.png" id="4_ekt2r"]
 [ext_resource type="Texture2D" uid="uid://cdf1nw4ajbvv3" path="res://Assets/Sprites/Scenery/arena.png" id="5_ekt2r"]
 
-[node name="Battle_GFX" type="Node2D" unique_id=531540765]
+[node name="Battle_GFX" type="Node2D"]
 
-[node name="Battle_Player" type="Node2D" parent="." unique_id=914930256]
+[node name="Battle_Player" type="Node2D" parent="."]
 unique_name_in_owner = true
 script = ExtResource("1_kt4s3")
 
-[node name="Player" type="Sprite2D" parent="Battle_Player" unique_id=631013640]
+[node name="Player" type="Sprite2D" parent="Battle_Player"]
 texture_filter = 1
 position = Vector2(-414.99997, 98.000015)
 scale = Vector2(7.3124986, 7.6484375)
 texture = ExtResource("2_llxbv")
 
-[node name="Enemy" type="Node2D" parent="." unique_id=1334808925]
+[node name="Enemy" type="Node2D" parent="."]
 unique_name_in_owner = true
 script = ExtResource("3_fysxo")
 
-[node name="Sprite2D" type="Sprite2D" parent="Enemy" unique_id=804069170]
+[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
 texture_filter = 1
 position = Vector2(232.00002, -290)
 scale = Vector2(5.493505, 5.3415794)
 texture = ExtResource("4_ekt2r")
 
-[node name="Battle_Scene" type="Node2D" parent="." unique_id=1642985067]
+[node name="Battle_Scene" type="Node2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="Battle_Scene" unique_id=949238378]
+[node name="Sprite2D" type="Sprite2D" parent="Battle_Scene"]
 z_index = -1
 position = Vector2(16, 26)
 scale = Vector2(6.015137, 5.784723)

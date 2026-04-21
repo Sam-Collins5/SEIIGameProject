@@ -1,6 +1,8 @@
 class_name QuestionImporter
 extends Node
 
+const QuestionClass = preload("res://Scripts/Questions/question.gd")
+
 var file_path: String
 var questions: Dictionary
 
@@ -24,7 +26,7 @@ func read_questions() -> void:
 			continue
 		if i == len(lines) - 1 and lines.get(i) == "":
 			break
-		var q = Question.new()
+		var q = QuestionClass.new()
 		q.Id = lines.get(i)
 		q.Type = lines.get(i+1)
 		q.Text = lines.get(i+2)
