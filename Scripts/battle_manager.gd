@@ -365,6 +365,9 @@ func _on_question_timer_end() -> void:
 	strength_modifier_turns -= 1
 	strength_modifier_turns = clamp(strength_modifier_turns, 0, 999)
 	
+	homework_turns -= 1
+	homework_turns = clamp(homework_turns, 0, 999)
+	
 	# switch to enemy's turn
 	turn = Battle_Turn.Enemy_Turn
 	enemy_turn()
