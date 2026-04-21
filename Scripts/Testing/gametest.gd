@@ -3,8 +3,8 @@ extends SceneTree
 const BATTLE_ENEMY := preload("res://Scripts/enemy.gd")
 const BATTLE_PLAYER := preload("res://Scripts/battle_player.gd")
 const BATTLE_ITEMS := preload("res://Scripts/battle_items_manager.gd")
-const QUESTION_IMPORTER := preload("res://Scripts/Questions/question_importer.gd")
 const QUESTION := preload("res://Scripts/Questions/question.gd")
+const QUESTION_IMPORTER := preload("res://Scripts/Questions/question_importer.gd")
 const BATTLE_MANAGER := preload("res://Scripts/battle_manager.gd")
 
 

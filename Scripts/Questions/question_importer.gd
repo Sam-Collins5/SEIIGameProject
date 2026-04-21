@@ -1,8 +1,6 @@
 class_name QuestionImporter
 extends Node
 
-const Question := preload("res://Scripts/Questions/question.gd") 
-
 var file_path: String
 var questions: Dictionary
 
