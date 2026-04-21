@@ -14,4 +14,4 @@ jobs:
           Expand-Archive -Path godot.zip -DestinationPath godot_temp
           Move-Item godot_temp/Godot_v4.5.1-stable_mono_win64/Godot_v4.5.1-stable_mono_win64.exe .
       - name: Run tests
-        run: ./Godot_v4.5.1-stable_mono_win64/Godot_v4.5.1-stable_mono_win64.exe --path . --headless --script Scripts/Testing/gametest.gd
+        run: Godot_v4.5.1-stable_mono_win64.exe --headless --script Scripts/Testing/gametest.gd
