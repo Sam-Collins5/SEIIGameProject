@@ -1,7 +1,7 @@
 class_name BattleItemsManager
 extends Node
 
-var battle_manager: Node
+var battle_manager: Node2D
 
 var item_ui: Control
 
