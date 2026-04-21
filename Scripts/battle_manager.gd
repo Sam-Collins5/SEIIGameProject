@@ -167,6 +167,7 @@ func end_battle() -> void:
 	var overworld_gfx = get_node("%Overworld_GFX")
 	if overworld_gfx:
 		overworld_gfx.visible = true
+	get_tree().quit()
 
 
 func _on_button1_pressed() -> void:
