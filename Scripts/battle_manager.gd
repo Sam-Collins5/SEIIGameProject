@@ -167,6 +167,9 @@ func end_battle() -> void:
 	var overworld_gfx = get_node("%Overworld_GFX")
 	if overworld_gfx:
 		overworld_gfx.visible = true
+	
+	var gamemanager = get_node("%GameManager")
+	gamemanager.game_state = gamemanager.GameState.OVERWORLD
 	get_tree().quit()
 
 
