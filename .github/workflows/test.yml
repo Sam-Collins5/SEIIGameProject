@@ -1,22 +1,16 @@
 name: Brinkley Tests
-
 on:
   push:
   pull_request:
-
 jobs:
   test:
-    runs-on: ubuntu-latest
-
+    runs-on: windows-latest
     steps:
       - name: Checkout project
         uses: actions/checkout@v4
-
       - name: Download Godot
         run: |
-          wget -q https://github.com/godotengine/godot/releases/download/4.5.1-stable/Godot_v4.5.1-stable_mono_linux_x86_64.zip
-          unzip -q Godot_v4.5.1-stable_mono_linux_x86_64.zip
-          chmod +x Godot_v4.5.1-stable_mono_linux_x86_64/Godot_v4.5.1-stable_mono_linux.x86_64
-
+          curl -L -o godot.zip https://github.com/godotengine/godot/releases/download/4.5.1-stable/Godot_v4.5.1-stable_mono_win64.zip
+          Expand-Archive -Path godot.zip -DestinationPath .
       - name: Run tests
-        run: ./Godot_v4.5.1-stable_mono_linux_x86_64/Godot_v4.5.1-stable_mono_linux.x86_64 --headless --script Scripts/Testing/gametest.gd
+        run: ./Godot_v4.5.1-stable_mono_win64/Godot_v4.5.1-stable_mono_win64.exe --headless --script Scripts/Testing/gametest.gd
