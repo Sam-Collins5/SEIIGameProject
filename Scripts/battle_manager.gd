@@ -204,7 +204,7 @@ func enable_buttons(enable: bool) -> void:
 	button4.disabled = !enable
 
 
-func set_question(question: Question) -> void:
+func set_question(question: Object) -> void:
 	current_question = question
 	var choices = Array()
 	choices = [ question.ChoiceA, question.ChoiceB, question.ChoiceC, question.ChoiceD ]
