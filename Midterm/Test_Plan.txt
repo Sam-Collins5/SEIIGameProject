@@ -1,0 +1,13 @@
+This is the testing plan that we currently have in place...
+
+- We are currently implementing automated regression testing in a gametest.gd script, located in Scripts/Testing/.
+  - This regression testing primarily tests the functionality of several different things that can occur during a given combat session within our game.
+  - This regression testing will be automatically run on every git push to the branch that it's located on. The testing will make sure that changes made to battle code do not break or act in a way not intended.
+  - This regression testing is going to be expanded as combat functionalities are added to the project.
+- We are also conceptualizing automated testing on the question importer that Sam Collins has created. 
+  - This testing will likely constitute some manner of fuzzing or vulnerability scanner that will find any vulnerabilities or bugs that exist within the code base for the question importer.
+  - Though this testing has yet to be introduced, it is planned to be done in the near future. 
+- Analysis Reports
+  - The analysis reports that are going to be done on these tests are mainly checking for errors. 
+  - They should likely be very straightforward and easy to understand. Either the tests will run and pass, or they will fail and give an error report. 
+    - The automated regression tests already include this error reporting. 
