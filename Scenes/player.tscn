@@ -461,6 +461,7 @@ shape = SubResource("RectangleShape2D_f1ek2")
 [node name="TopWall" type="StaticBody2D" parent="Overworld_GFX/Bounding Box" unique_id=1535612528]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Overworld_GFX/Bounding Box/TopWall" unique_id=1491819459]
+visible = false
 position = Vector2(126, 0)
 shape = SubResource("WorldBoundaryShape2D_tx1dd")
 
